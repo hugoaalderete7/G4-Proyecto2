@@ -52,6 +52,7 @@
 
                 </li>
             </ul>
+
         </nav>
     </header>
     <main>
@@ -118,6 +119,23 @@
             </div>
         </div>
     </main>
+   <!--LOS BOTONES DE EDITAR, BORRAR Y FAV QUE IRIAN EN LA COLUMNA DE OPCIONES!-->
+    <!--<div>
+        <td>
+            <span class="options">
+              <span class="delete" onclick="deleteGame('${game.id}')"
+                ><i class="fa-solid fa-trash-can"></i
+              ></span>
+              <span class="edit" onclick="editGame('${game.id}')"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></span>
+              <span class=${colorFeatured} onclick= "featuredGame('${game.id}')"
+                ><i class="fa-solid fa-star"></i
+              ></span>
+            </span>
+          </td>
+          </div>
+        -->
     <!--Ventana Modal-->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -155,6 +173,7 @@
                             </div>
                             <!--<button id="subir-img">Selecciona tu archivo</button>-->
                             <input type="file" id="input-img">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
                             
                         </div>
                     </form>
@@ -168,7 +187,7 @@
 
     </div>
     </div>
-    <footer class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
+    <footer id="footer" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
         <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
             <a href="https://rollingcodeschool.com/" target="_blank"><img
                     src="https://rollingcodeschool.com/wp-content/uploads/2021/07/Grupo-8.png" alt="rollingcode" /></a>
