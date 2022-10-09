@@ -3,8 +3,8 @@ let title = document.getElementById('title');
 let category = document.getElementById('categoria');
 let description = document.getElementById('descripcion');
 let url = document.getElementById('url');
-let carrusel = document.getElementById('carrusel');
-let fila = document.getElementById('fila');
+let id = document.getElementById('id');
+let fila = document.getElementById('datatable-tbody');
 
 
 
@@ -30,73 +30,71 @@ buttonSave.addEventListener('click', () => {
         description.value = "";
         url.value = "";
 
-        readFunction();
+        ReadFunction();
     } else {
-        alert("Campos vacios")
+        alert("Campos vacíos")
     }
 
 })
 
 function ReadFunction() {
-    //Actualizar la lista de mensages
+
     let arrayPeliculas = [];
 
     let getLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
 
     if (getLocalStorage != null) {
         for (let index = 0; index < getLocalStorage.length; index++) {
-            arrayPeliculas.push( `
+            arrayPeliculas.push(`
             <tr>
-            <th scope="row">${(index + 3)}</th>
-            
+           
+            <td>${getLocalStorage[index].id}</td>
             <td>${getLocalStorage[index].title}</td>
             <td>${getLocalStorage[index].category}</td>
             <td>${getLocalStorage[index].description}</td>
             <td>${getLocalStorage[index].url}</td>
-            <td><button class="delete btn btn-white"><img src="/images/eliminar.png" alt=""></button></td>
-            <td><button class="add btn btn-white" onclick="addMovieCarousel()"><img src="/images/mas.png" alt=""></button></td>
+            <td><button class="btn btn-white" onclick="deleteMovie (${index})"><img src="/proyecto/pagina administracion/images/basura.png" width="30" alt=""></button></td>
+            
 
         </tr>
                     
                         `)
+
         }
 
 
         fila.innerHTML = arrayPeliculas
+
     } else {
         arrayPeliculas = [];
         fila.innerHTML = arrayPeliculas
     }
 }
 
-function addMovieCarousel() {
-    let carousel = [];
+// //Delete
+// const deleteMovie = (id) => {
+//     let deleteMovie = []
+//     getLocalStorage.map((item) => {
+//         if (id != item.id) {
+//             deleteMovie.push(item);
+//         }
+//     })
+//     localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
+//     readFunction();
+// }
 
-    let getLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
+function deleteMovie(index) {
 
+    let newgetLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
+    let movie = [];
 
-    for (let index = 0; index < getLocalStorage.length; index++) {
-        carousel.push(
-            `
-            <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="${index}"
-                class="active" aria-current="true" aria-label="Slide ${[index + 1]}"></button>
-        </div>
-        <div class="carousel-inner">
+    newgetLocalStorage.splice(index, 1);
 
-
-            <div class="carousel-item">
-                <img src="${getLocalStorage[index].url}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>${getLocalStorage[index].title}</h5>
-                    <p>${getLocalStorage[index].category}</p>
-                </div>
-            </div>
-
-        </div>
-                        `)
+    for (let i = 0; i < newgetLocalStorage.length; i++) {
+        movie.push(newgetLocalStorage[i]);
     }
 
-    carrusel.innerHTML = carousel
+    localStorage.setItem('Peliculas', JSON.stringify(movie));
+
+    ReadFunction();
 }
- 
