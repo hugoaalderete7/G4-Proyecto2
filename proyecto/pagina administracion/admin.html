@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="footer.css">
+    <!--Link para usar el icono de Font Awesome-->
+    <script src="https://kit.fontawesome.com/574da1cd36.js" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <title>Rolling Movies</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <!--Logo-->
+            <a href="./inicio.html" class="logo">
+                <img src="https://th.bing.com/th/id/R.46284f2db16b8d5326582fe2af1df7f9?rik=e5Q5dhLfVQRKhQ&riu=http%3a%2f%2fvignette3.wikia.nocookie.net%2farresteddevelopment%2fimages%2f6%2f6e%2fNetflix_Logo.jpg%2frevision%2flatest%3fcb%3d20120105151323&ehk=pUpQ7MkkCBHOYcxHQG%2b9gv03TUBHbLZcuKlwJx3ICNM%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Logo Rolling movies" />
+            </a>
+            <!--Boton hamburguesa-->
+            <button class="nav_toggle hide" aria-label="Abrir menú">
+                <span id="bars">
+                    <i class="fa-solid fa-bars fa-lumos"></i>
+                </span>
+                <span id="cross" class="hide">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </button>
+            <!--Menu-->
+            <ul class="nav_menu">
+                <li class="nav_menu_item">
+                    <a href="inicio.html" class="nav_menu_link nav_link">Inicio |</a>
+                </li>
+                <li class="nav_menu_item">
+                    <a href="contacto.html" class="nav_menu_link nav_link">Contacto |</a>
+                </li>
+                <li class="nav_menu_item">
+                    <a href="#" class="nav_menu_link nav_link">Acerca de |</a>
+                </li>
+                <li class="nav_menu_item hide">
+                    <a href="admin.html" class="nav_menu_link nav_link">Administración |</a>
+                </li>
+                <li class="nav_menu_item" id="menuLogin">
+                    <a href="#" class="nav_menu_link nav_link">Login <i class="fa-solid fa-angle-down"></i> |</a>
+
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <div id="container" class="container">
+            <div class="header-datatable">
+                <span id="space"></span>
+                <h1 id="datatable-title">Administrar Peliculas</h1>
+                <button class="button-new-movie" type="button" id="openModal" data-bs-toggle="modal"
+                    data-bs-target="#modal">
+
+                    Nueva +
+                </button>
+            </div>
+            <div class="datatable-container">
+                <div class="header-tools">
+                    <div class="search">
+                        <input type="text" name="search-movie" id="search-movie" class="search-input"
+                            placeholder="Ingrese una Pelicula" />
+                    </div>
+                </div>
+                <table class="datatable">
+                    <thead>
+                        <tr>
+                            <th>Id/Numero</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>Descripcion</th>
+                            <th>Publicado</th>
+                            <th>Opciones?</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datatable-tbody">
+                        <!-- aqui ira todo lo q carguemos -->
+                    </tbody>
+                </table>
+                <div class="footer-tools">
+                    <div class="list-items">
+                        Mostrar
+                        <select name="n-entries" id="n-entries" class="n-entries">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                    <div class="pages">
+                        <ul class="pagination">
+                            <li><span class="active">1</span></li>
+                            <li><button>2</button></li>
+                            <li><button>3</button></li>
+                            <li><button>4</button></li>
+                            <li><span>...</span></li>
+                            <li><button>9</button></li>
+                            <li><button>10</button></li>
+                        </ul>
+                        <div class="pagination-responsive">
+                            <ul>
+                                <li><button>Anterior</button></li>
+                                <li><span>1</span></li>
+                                <li><button>Siguiente</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   <!--LOS BOTONES DE EDITAR, BORRAR Y FAV QUE IRIAN EN LA COLUMNA DE OPCIONES!-->
+    <!--<div>
+        <td>
+            <span class="options">
+              <span class="delete" onclick="deleteGame('${game.id}')"
+                ><i class="fa-solid fa-trash-can"></i
+              ></span>
+              <span class="edit" onclick="editGame('${game.id}')"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></span>
+              <span class=${colorFeatured} onclick= "featuredGame('${game.id}')"
+                ><i class="fa-solid fa-star"></i
+              ></span>
+            </span>
+          </td>
+          </div>
+        -->
+    <!--Ventana Modal-->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Nueva pelicula:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Id</label>
+                            <input type="text" class="form-control" id="id-peli" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de la pelicula:</label>
+                            <input type="text" class="form-control" id="nombre-peli">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria:</label>
+                            <input type="text" class="form-control" id="cat-peli" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion:</label>
+                            <input type="text" class="form-control" id="desc-peli" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Url del trailer</label>
+                            <input type="text" class="form-control" id="url-peli" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen de la pelicula:</label>
+                            <div class="previewImages">
+                            </div>
+                            <!--<button id="subir-img">Selecciona tu archivo</button>-->
+                            <input type="file" id="input-img">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+                            
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" data-bs-dismiss="modal">
+                    <button type="submit" class="modal-footer-btn" id="agregar-peli">Agregar</button>
+                    <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <footer id="footer" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
+        <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
+            <a href="https://rollingcodeschool.com/" target="_blank"><img
+                    src="https://rollingcodeschool.com/wp-content/uploads/2021/07/Grupo-8.png" alt="rollingcode" /></a>
+        </aside>
+        <div class="footer_derechos order-1 order-md-2 col-xl-4 col-12 mx-0 py-4">
+            <p>Todos los derechos reservados</p>
+            <p>Rolling Movies ©</p>
+        </div>
+        <div class="footer_redes order-2 order-md-3 col-xl-4 col-12 mx-md-0 my-4">
+            <a class="mx-auto" href="error.html"><i
+                    class="fa-brands fa-instagram icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
+            <a class="mx-auto" href="error.html"><i
+                    class="fa-brands fa-facebook icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
+            <a class="mx-auto" href="error.html"><i
+                    class="fa-brands fa-whatsapp icon d-flex align-items-center justify-content-center p-4"></i></a>
+            <a class="mx-auto" href="error.html"><i
+                    class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
+        </div>
+    </footer>
+
+
+    <!--Link al admin.js -->
+    <script src="admin.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
