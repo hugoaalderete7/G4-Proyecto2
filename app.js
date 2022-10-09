@@ -2,14 +2,13 @@
 
 
 
-
 // FUNCION DE ELIMINADO
 
 function DeleteFunction() {
     localStorage.clear()
-    actividades = [];
+    movie = [];
   
-    if (JSON.parse(localStorage.getItem("actividades")) != null) {
+    if (JSON.parse(localStorage.getItem("movie")) != null) {
       swal({
         title: "Estas seguro que quieres eliminar toda la lista?",
         icon: "warning",
@@ -17,14 +16,9 @@ function DeleteFunction() {
         dangerMode: true,
       })
     } else {
-      swal("No tienes ningun item en la lista ");
+      alert("No tienes ninguna pelicula cargada ");
     }
   
     ReadFunction()
   }
-  
-  function DeleteItem(id) {
-    actividades.splice(id, 1)
-    localStorage.setItem("actividades", JSON.stringify(actividades))
-    ReadFunction()
-  }
+ 
