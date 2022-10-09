@@ -19,7 +19,7 @@ tabindex="-1">
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="passwordLogin">
-                </div>-->
+                </div>
                 <button class="btn btn-primary w-100" id="buttonLogin">Iniciar
                     Sesion</button>
             </form>
@@ -54,7 +54,7 @@ aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="passwordRegister">
-                </div>-->
+                </div>
                 <button class="btn btn-primary w-100" id="buttonRegister">Crear
                     Cuenta</button>
             </form>
