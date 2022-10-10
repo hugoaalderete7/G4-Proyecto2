@@ -1,18 +1,2 @@
-.navbar{
-    background-color: black;
-    height: 13vh;
-    border: solid 2px blue;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    
-}
-.Logo{
-    border-radius: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10%;
-}
 
 
