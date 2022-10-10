@@ -1,5 +1,5 @@
 .navbar{
-    background-color: black;
+    /* background-color: black; */
     height: 13vh;
     border: solid 2px blue;
     position: relative;
@@ -17,7 +17,7 @@
 
 .Padre{
     position: relative;
-    background-color: black;
+    /* background-color: black; */
     width: 100%;
     height: 100vh;
 }
@@ -51,3 +51,94 @@ img{
 .Portada{
     height: 220px;
 }
+
+/* -----------------------------css carrusel--------------------------------------- */
+
+.body{
+    background-image:url("public/1-\ images/fondoNegro");
+     margin-top: 150px;
+ }
+ 
+ .carousel__contenerdor{
+     position: relative;
+   
+ } 
+ 
+ /* .carousel__anterior, */
+ /* .carousel__siguiente{
+     position: absolute;
+     display: block; 
+     width: 30px;
+     height: 100%;
+     border: none;
+     top: calc(50% - 35px);
+     cursor: pointer;
+     line-height: 30px;
+     text-align: center;
+     background: none;
+     color: #fff;
+     opacity: 20%;
+ 
+ 
+ } */
+ /* .carousel__anterior:hover,
+ .carousel__siguiente:hover{
+     opacity: 100%;
+ }
+ 
+ .carousel__anterior{
+     left: -30px;
+   }
+   .carousel__siguiente{
+     right: -30px;
+   } */
+   .carousel__elemento{
+   
+     text-align: center;
+     color: #fff;
+    
+   }
+ 
+   /* prueba de card */
+   .card{
+     width: 150px;
+     height: 200px;
+     background-color: #333;
+     border-radius: 10px;
+     outline: 1px solid
+     rgba(255 ,255 ,255, .5);
+     outline-offset: -8px;
+     box-shadow: 3px 3px 10px;
+     overflow: hidden;
+   }
+   .card-image{
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ opacity: .6;  
+ transition: transform .75s;
+ }
+ .card:hover .card-image{
+     transform: scale(1.15);
+ }
+ .card-title{
+     position: absolute;
+     left: 15px;
+     bottom: 15px;
+     font-size: 20px;
+     text-shadow: 0, 0, 0.5
+     rgba(0,0,0, rgba(255 ,255 ,255, .5))
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
