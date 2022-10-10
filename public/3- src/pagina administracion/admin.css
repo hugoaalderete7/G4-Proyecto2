@@ -24,7 +24,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding-top: 5%;
+   
 }
 header{
     height: 10vh;
@@ -66,18 +66,14 @@ main{
     cursor: pointer;
 }
 
-h1{
-    color: white;
-   
-}
-
 .datatable-container {
     background-color: rgba(255, 255, 255, 0.7) ;
-    border-radius: 3px;
+    border-radius: 10px;
     width: 80%;
     font-size: 18px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    padding: 10px;
 }
 
 .datatable-container .header-tools {
@@ -373,4 +369,3 @@ h1{
     }
 
 }
-
