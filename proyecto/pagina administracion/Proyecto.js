@@ -5,15 +5,15 @@ let description = document.getElementById('descripcion');
 let url = document.getElementById('url');
 let id = document.getElementById('id');
 let fila = document.getElementById('datatable-tbody');
-
-
-
-ReadFunction();
+let search = document.getElementById('search-movie');
+let filtrarbtn = document.getElementById('filtrarbtn');
 
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
+ReadFunction();
 buttonSave.addEventListener('click', () => {
 
+   
     if (title.value != "" && description.value != "" && category.value != "") {
         pelicula.push({
 
@@ -41,29 +41,25 @@ function ReadFunction() {
 
     let arrayPeliculas = [];
 
-    let getLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
-
-    if (getLocalStorage != null) {
-        for (let index = 0; index < getLocalStorage.length; index++) {
+    if (pelicula != null) {
+        for (let index = 0; index < pelicula.length; index++) {
             arrayPeliculas.push(`
             <tr>
            
-            <td>${getLocalStorage[index].id}</td>
-            <td>${getLocalStorage[index].title}</td>
-            <td>${getLocalStorage[index].category}</td>
-            <td>${getLocalStorage[index].description}</td>
-            <td>${getLocalStorage[index].url}</td>
-            <td><button class="btn btn-white" onclick="deleteMovie (${index})"><img src="/proyecto/pagina administracion/images/basura.png" width="30" alt=""></button></td>
+            <td>${pelicula[index].id}</td>
+            <td>${pelicula[index].title}</td>
+            <td>${pelicula[index].category}</td>
+            <td>${pelicula[index].description}</td>
+            <td>${pelicula[index].url}</td>
+            <td><button class="btn btn-secondary" onclick="deleteMovies(${pelicula[index].id})">delete</button></td>
+            
             
 
         </tr>
                     
                         `)
-
+                        fila.innerHTML = arrayPeliculas
         }
-
-
-        fila.innerHTML = arrayPeliculas
 
     } else {
         arrayPeliculas = [];
@@ -71,30 +67,35 @@ function ReadFunction() {
     }
 }
 
-// //Delete
-// const deleteMovie = (id) => {
-//     let deleteMovie = []
-//     getLocalStorage.map((item) => {
-//         if (id != item.id) {
-//             deleteMovie.push(item);
-//         }
-//     })
-//     localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
-//     readFunction();
+
+//Delete
+ const deleteMovies = (id) => {
+    
+     let deleteMovie = []
+     pelicula.map((item) => {
+         if (id != item.id) {
+             deleteMovie.push(item);
+         }
+     })
+     localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
+     location.reload()
+     ReadFunction();
+ }
+
+// function deleteMovie(index) {
+
+//     let newgetLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
+//     let movie = [];
+
+//     newgetLocalStorage.splice(index, 1);
+
+//     for (let i = 0; i < newgetLocalStorage.length; i++) {
+//         movie.push(newgetLocalStorage[i]);
+//     }
+
+//     localStorage.setItem('Peliculas', JSON.stringify(movie));
+
+//     ReadFunction();
+//     window.location.reload()
 // }
 
-function deleteMovie(index) {
-
-    let newgetLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
-    let movie = [];
-
-    newgetLocalStorage.splice(index, 1);
-
-    for (let i = 0; i < newgetLocalStorage.length; i++) {
-        movie.push(newgetLocalStorage[i]);
-    }
-
-    localStorage.setItem('Peliculas', JSON.stringify(movie));
-
-    ReadFunction();
-}
