@@ -39,8 +39,8 @@
                 <div class="previewImages">
                 </div>
                 <!--<button id="subir-img">Selecciona tu archivo</button>-->
-                <input type="file" id="input-img">
-                <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+                <input type="file" id="image">
+                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="4194304" /> -->
 
             </div>
         </form>
@@ -59,21 +59,16 @@
 
                              <!--preparando ID PARA EL READ  -->
         <section>
-            <h5 class="title-section" id="categoria-seccion">Peliculas romanticas</h5>
+            <h5 class="title-section-romanticos" id="categoria-seccion">Peliculas romanticas</h5>
             <div class="carousel">
                 <div class="carousel__contenedor">
 
                     <button role="button" id="flecha-izquierda" class="carousel__anterior"><i
                             class="fas fa-angle-left"></i>
                     </button>
-                    
-                    <div class="carousel__lista">
-                        <div class="carousel__elemento">
-                            <img id="banner-movie" alt="">
-                            <a href="" id="link-trailer"></a>
-                            <p class="text" id="title"></p>
-                            <p class="text" id="descripcion"></p>
-                        </div>
+                    <!-- datos importantes para vincular -->
+                    <div id="carousel__lista" class="carousel__lista p-3">
+                      <!-- aqui va lo qye me llevo a js -->
                     </div>
 
                     <button role="button" id="flecha-derecha" class="carousel__siguiente">
