@@ -1,87 +1,50 @@
-.body{
-   background-image:url("images/HD-wallpaper-texture-light-black-dark.jpg");
-    margin-top: 150px;
+.carousel {
+  /* background-color: red; */
+  width: 100%;
+  height: 300px;
+  margin-bottom: 50px;
 }
 
-.carousel__contenerdor{
-    position: relative;
-  
-} 
-
-/* .carousel__anterior, */
-/* .carousel__siguiente{
-    position: absolute;
-    display: block; 
-    width: 30px;
-    height: 100%;
-    border: none;
-    top: calc(50% - 35px);
-    cursor: pointer;
-    line-height: 30px;
-    text-align: center;
-    background: none;
-    color: #fff;
-    opacity: 20%;
-
-
-} */
-/* .carousel__anterior:hover,
-.carousel__siguiente:hover{
-    opacity: 100%;
-}
-
-.carousel__anterior{
-    left: -30px;
-  }
-  .carousel__siguiente{
-    right: -30px;
-  } */
-  .carousel__elemento{
-  
-    text-align: center;
-    color: #fff;
-   
-  }
-
-  /* prueba de card */
-  .card{
-    width: 150px;
-    height: 200px;
-    background-color: #333;
-    border-radius: 10px;
-    outline: 1px solid
-    rgba(255 ,255 ,255, .5);
-    outline-offset: -8px;
-    box-shadow: 3px 3px 10px;
-    overflow: hidden;
-  }
-  .card-image{
-position: absolute;
-inset: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-opacity: .6;  
-transition: transform .75s;
-}
-.card:hover .card-image{
-    transform: scale(1.15);
-}
-.card-title{
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    font-size: 20px;
-    text-shadow: 0, 0, 0.5
-    rgba(0,0,0, rgba(255 ,255 ,255, .5))
+.carousel__contenedor {
+  position: relative;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.808);
+  height: 100%;
 }
 
 
+/* flechas */
+.carousel__anterior {
 
+  position: relative;
+  background-color: rgb(12, 12, 12);
+  opacity: 80%;
+  border: none;
+  color: white;
+}
 
+.carousel__siguiente {
+  position: relative;
+  background-color: rgb(12, 12, 12);
+  opacity: 80%;
+  border: none;
+  color: white;
 
+}
 
-
-
-
-
+.carousel__elemento {
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width: 90px;
+}
+.carousel__elemento:hover{
+transform:scale(1.1);
+}
+.text {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.title-section{
+  font-family: Arial, Helvetica, sans-serif;
+}
