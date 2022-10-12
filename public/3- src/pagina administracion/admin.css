@@ -47,7 +47,8 @@ main{
     justify-content: space-between;
     margin-bottom: 37px;
     width: 80%;
-    color: white;
+    color:  #801f1f;
+    
 }
 
 #space {
@@ -57,10 +58,10 @@ main{
 .button-new-movie {
     width: 150px;
     height: 50px;
-    background: #352d2e;
+    background: #060606;
     border-radius: 20px;
     font-size: 20px;
-    border-color: #000000;
+    border-color: #801f1f;
     color: white;
     cursor: pointer;
 }
@@ -68,6 +69,7 @@ main{
 .datatable-container {
     background-color: rgba(255, 255, 255, 0.7) ;
     border-radius: 10px;
+    border: solid  #801f1f;;
     width: 80%;
     font-size: 18px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
@@ -94,7 +96,7 @@ main{
     display: inline-block;
     box-sizing: border-box;
     border-radius: 3px;
-    border: solid 1px rgb(0, 0, 0);
+    border: solid 1px #801f1f;;
     text-align: center;
    
 }
