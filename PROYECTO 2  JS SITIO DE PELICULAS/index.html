@@ -15,8 +15,8 @@
 
 <body>
     <section>
+        <!-- FORMULARIO DE REFERENCIA ENTRADA DE DATOS -->
         <form>
-
             <div class="mb-3">
                 <label class="form-label">Nombre de la pelicula:</label>
                 <input type="text" class="form-control" id="title">
@@ -29,7 +29,6 @@
                 <label class="form-label">Descripcion:</label>
                 <input type="text" class="form-control" aria-describedby="emailHelp" id="descripcion">
             </div>
-
             <div class="mb-3">
                 <label class="form-label">Url del trailer</label>
                 <input type="text" class="form-control" id="url" aria-describedby="emailHelp">
@@ -38,10 +37,7 @@
                 <label class="form-label">Imagen de la pelicula:</label>
                 <div class="previewImages">
                 </div>
-                <!--<button id="subir-img">Selecciona tu archivo</button>-->
                 <input type="file" id="image">
-                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="4194304" /> -->
-
             </div>
         </form>
         </div>
@@ -57,132 +53,149 @@
     </section>
 
 
-                             <!--preparando ID PARA EL READ  -->
-        <section>
-            <h5 class="title-section-romanticos" id="categoria-seccion">Peliculas romanticas</h5>
-            <div class="carousel">
-                <div class="carousel__contenedor">
-
-                    <button role="button" id="flecha-izquierda" class="carousel__anterior"><i
-                            class="fas fa-angle-left"></i>
-                    </button>
-                    <!-- datos importantes para vincular -->
-                    <div id="carousel__lista" class="carousel__lista p-3">
-                      <!-- aqui va lo qye me llevo a js -->
-                    </div>
-
-                    <button role="button" id="flecha-derecha" class="carousel__siguiente">
-                        <i class="fas fa-angle-right"></i>
-                    </button>
-
-                </div>
-            </div>
-            <div role="tablist" class="carousel__indicadores"></div>
-        </section>
-    </section>
-                  <!-- TERMINA LA SECCION DE PELICULAS ROMANTICAS POR EJ -->
-
-
-
-
-
-
-      <!-- ELEMENTOS DE EJEMPLO -->
-
-    <!-- <div class="carousel__lista">
-                    <div class="carousel__elemento">
-                        <img id="url" alt="movie">
-                        <p class="text" id="title"></p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <img src="images/images (5).jfif" alt="movie">
-                        <p class="text">127 horas</p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <img src="images/images (5).jfif" alt="movie">
-                        <p class="text">127 horas</p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                        <p class="text">invictus</p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                        <p class="text">invictus</p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                        <p class="text">invictus</p>
-                    </div>
-                    <div class="carousel__elemento">
-                        <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                        <p class="text">invictus</p>
-                    </div>
-                   
-                   
-                </div> -->
-<!-- EJEMPLO BASE DE SEGUNDA SECCION -->
+    <!--CARROUSEL 1  -->
     <section>
-        <section>
-            <div class="carousel">
-                <div class="carousel__contenedor">
+        <h5 class="title-section-romanticos" id="categoria-seccion-inspira">Peliculas romanticas</h5>
+        <div class="carousel">
+            <div class="carousel__contenedor">
 
-                    <button role="button" id="flecha-izquierda" class="carousel__anterior"><i
-                            class="fas fa-angle-left"></i>
-                    </button>
+                <button role="button" id="flecha-izquierda" class="carousel__anterior"><i class="fas fa-angle-left"></i>
+                </button>
+                <!-- datos importantes para vincular -->
 
-                    <div class="carousel__lista">
-                        <div class="carousel__elemento">
-                            <img src="images/images (5).jfif" alt="movie">
-                            <p class="text">127 horas</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <img src="images/images (5).jfif" alt="movie">
-                            <p class="text">127 horas</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <img src="images/images (5).jfif" alt="movie">
-                            <p class="text">127 horas</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                            <p class="text">invictus</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                            <p class="text">invictus</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                            <p class="text">invictus</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                            <p class="text">invictus</p>
-                        </div>
-                        <div class="carousel__elemento">
-                            <a href=""><img src="images/descarga.jfif" alt="movie"></a>
-                            <p class="text">invictus</p>
-                        </div>
-                    </div>
+                <div id="carousel__lista" class="carousel__lista p-3">
 
-                    <button role="button" id="flecha-derecha" class="carousel__siguiente">
-                        <i class="fas fa-angle-right"></i>
-                    </button>
+                    <!-- aqui va lo qye me llevo a js -->
+
 
                 </div>
 
+                <button role="button" id="flecha-derecha" class="carousel__siguiente">
+                    <i class="fas fa-angle-right"></i>
+                </button>
             </div>
-
-            <div role="tablist" class="carousel__indicadores">
-            </div>
-        </section>
+        </div>
+        <div role="tablist" class="carousel__indicadores"></div>
     </section>
+    </section>
+    <!-- TERMINA LA SECCION DE PELICULAS ROMANTICAS POR EJ -->
+
+
+    <!--CARROUSEL 2  -->
+    <section>
+        <h5 class="title-section-romanticos" id="categoria-seccion">Peliculas romanticas</h5>
+        <div class="carousel">
+            <div class="carousel__contenedor">
+
+                <button role="button" id="flecha-izquierda" class="carousel__anterior"><i class="fas fa-angle-left"></i>
+                </button>
+                <!-- datos importantes para vincular -->
+
+                <div id="carousel__lista" class="carousel__lista p-3">
+
+                    <!-- aqui va lo que me llevo a js -->
+
+
+                </div>
+
+                <button role="button" id="flecha-derecha" class="carousel__siguiente">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+        <div role="tablist" class="carousel__indicadores"></div>
+    </section>
+    </section>
+    <!-- TERMINA LA SECCION DE PELICULAS ROMANTICAS POR EJ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
+
+
+<!-- EJEMPLO BASE DE SEGUNDA SECCION -->
+<!-- <section>
+                          <section>
+                              <div class="carousel">
+                                  <div class="carousel__contenedor">
+                  
+                                      <button role="button" id="flecha-izquierda" class="carousel__anterior"><i
+                                              class="fas fa-angle-left"></i>
+                                      </button>
+                  
+                                      <div class="carousel__lista">
+                                          <div class="carousel__elemento">
+                                              <img src="images/images (5).jfif" alt="movie">
+                                              <p class="text">127 horas</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <img src="images/images (5).jfif" alt="movie">
+                                              <p class="text">127 horas</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <img src="images/images (5).jfif" alt="movie">
+                                              <p class="text">127 horas</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <a href=""><img src="images/descarga.jfif" alt="movie"></a>
+                                              <p class="text">invictus</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <a href=""><img src="images/descarga.jfif" alt="movie"></a>
+                                              <p class="text">invictus</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <a href=""><img src="images/descarga.jfif" alt="movie"></a>
+                                              <p class="text">invictus</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <a href=""><img src="images/descarga.jfif" alt="movie"></a>
+                                              <p class="text">invictus</p>
+                                          </div>
+                                          <div class="carousel__elemento">
+                                              <a href=""><img src="images/descarga.jfif" alt="movie"></a>
+                                              <p class="text">invictus</p>
+                                          </div>
+                                      </div>
+                  
+                                      <button role="button" id="flecha-derecha" class="carousel__siguiente">
+                                          <i class="fas fa-angle-right"></i>
+                                      </button>
+                  
+                                  </div>
+                  
+                              </div>
+                  
+                              <div role="tablist" class="carousel__indicadores">
+                              </div>
+                          </section>
+                      </section> -->
+
+
+
+
+
+
+
+
 
 </html>

@@ -11,11 +11,6 @@ window.addEventListener('load', function(){
 });
 
 
-// // prueba agregado de pelicula en carrusel
-
-
-// // variables juli 
-
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -30,8 +25,6 @@ let carousel =document.getElementById ("carousel__lista");
 
 
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
-// CREAR
-
 
 // createFunction();
 buttonSave.addEventListener('click', () => {
@@ -55,7 +48,6 @@ buttonSave.addEventListener('click', () => {
         image.value = "";
 
         ReadFunction();
-        console.log(pelicula)
     } else {
         alert("Falta informacion para cargar nueva pelicula")
     }
@@ -76,15 +68,14 @@ function ReadFunction() {
             <p class="text" id="title">${pelicula[index].title}</p>
             <p class="text" id="descripcion">${pelicula[index].description}</p>
             </div>
-            `)
-          console.log(pelicula[index].image)
-            
+            `)            
           }
+          
           carousel__lista.innerHTML = arrayPeliculas
           
     } else {
       carousel__lista.innerHTML = arrayPeliculas
       arrayPeliculas = [];
     }
+    ReadFunction() 
 }
-ReadFunction() 

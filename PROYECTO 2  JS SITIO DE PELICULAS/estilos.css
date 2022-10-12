@@ -37,6 +37,7 @@
   display: inline-block;
   height: 150px;
   width: 90px;
+  background-color: red;
 }
 .carousel__elemento:hover{
 transform:scale(1.1);
