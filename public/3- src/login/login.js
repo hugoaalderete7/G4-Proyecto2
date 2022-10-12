@@ -1,5 +1,6 @@
 let loginModal = document.getElementById('loginModal');
-loginModal.innerHTML = `<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+loginModal.innerHTML =
+    `<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
 tabindex="-1">
 <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -82,25 +83,24 @@ buttonLogin.addEventListener('click', (e) => {
     let users = JSON.parse(localStorage.getItem('users')) || [];
     if (emailLogin.value != "" && passwordLogin.value != "") {
         let response = users.find((item) => item.email == emailLogin.value && item.password == passwordLogin.value) || []
-            if (response != [] && response.id != null && response.admin == false) {
-                window.location.href = "index.html"
-            } else if (response != [] && response.id != null && response.admin != false){
-                Admin();
-            }else {
-                alert("Campos Incorrectos")
-            }
-             
+        if (response != [] && response.id != null && response.admin == 'false') {
+            window.location.href = "index.html"
+        } else if (response != [] && response.id != null && response.admin != 'false') {
+            Admin();
         } else {
-            alert("Campos Incompletos")
+            alert("Campos Incorrectos")
         }
-    
+    } else {
+        alert("Campos Incompletos")
+    }
+
 });
 
 function Admin() {
     let Admin = document.getElementById('Admin')
-    Admin.innerHTML = `<a class="nav-link text-white" href="#">Admin</a>`
+    Admin.innerHTML = `<a class="nav-link text-white" href="/public/3- src/admin/admin.html">Admin</a>`
     let modalClose = document.getElementById('modalClose')
-     modalClose.innerHTML=`<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+    modalClose.innerHTML = `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
 }
 
 buttonRegister.addEventListener('click', () => {
@@ -111,7 +111,7 @@ buttonRegister.addEventListener('click', () => {
             name: nameRegister.value,
             email: emailRegister.value,
             password: passwordRegister.value,
-            admin: false
+            admin: 'false',
         })
         localStorage.setItem('users', JSON.stringify(users));
     } else {

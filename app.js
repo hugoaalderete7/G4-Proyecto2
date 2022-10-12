@@ -11,7 +11,7 @@ navbar.innerHTML = `<!-- Inicio Navbar -->
     </div>
     <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
         <div class="navbar-nav p-5 w-50">
-            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active text-white" aria-current="page" href="/index.html">Inicio</a>
             <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" role="">Login</a>
             <div id="Admin">
 

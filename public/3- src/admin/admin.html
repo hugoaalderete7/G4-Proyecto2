@@ -17,19 +17,45 @@
 <body>
     <section id="navbar"></section>
     <section id="loginModal"></section>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Nro</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">email</th>
-                <th scope="col">password</th>
-                <th scope="col">admin</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="miTabla"></tbody>
+
+    <div class="d-flex m-4">
+        <input class="form-control" type="text" placeholder="Ingrese un nombre" id="search">
+        <button class="btn btn-primary mx-2" id="searchButton">Buscar</button>
+    </div>
+    <table class="table table-striped m-4 ">
+        <div>
+            <thead>
+                <tr>
+                    <th scope="col">Nro</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">email</th>
+                    <th scope="col">password</th>
+                    <th scope="col">admin</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="searchUsersView"></tbody>
+        </div>
     </table>
+
+    <br><br><br><br>
+
+    <table class="table table-striped m-4 ">
+        <div>
+            <thead>
+                <tr>
+                    <th scope="col">Nro</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">email</th>
+                    <th scope="col">password</th>
+                    <th scope="col">admin</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="miTabla"></tbody>
+        </div>
+    </table>
+
     <section>
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
