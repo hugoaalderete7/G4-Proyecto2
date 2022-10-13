@@ -1,4 +1,4 @@
-let navbar = document.getElementById('navbar')
+/*let navbar = document.getElementById('navbar')
 navbar.innerHTML = `<!-- Inicio Navbar -->
 <nav class="navbar navbar-expand-sm">
     <div class="d-flex">
@@ -24,4 +24,24 @@ navbar.innerHTML = `<!-- Inicio Navbar -->
         <span class="navbar-toggler-icon bg-white"></span>
     </button>
     </nav>;
-<!-- Fin Navbar -->`
+<!-- Fin Navbar -->`*/
+
+const grande = document.querySelector ('.grande')
+const punto = document.querySelectorAll('.punto')
+
+punto.forEach ((cadaPunto, i)=>{
+
+    punto[i].addEventListener ('click', ()=>{
+
+        let posicion = i
+        let operacion = posicion * (-50)
+
+        grande.style.transform = `translateX(${operacion}%)`
+
+        punto.forEach((cadaPunto, i)=> {
+            punto[i].classList.remove('activo')
+        })
+        
+        punto[i].classList.add('activo')
+    })
+})
