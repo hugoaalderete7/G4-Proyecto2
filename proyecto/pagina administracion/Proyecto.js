@@ -202,13 +202,13 @@ function ReadCarrusel() {
             if (pelicula[index].category == "action") {
                 arrayPeliculasaction.push(`
 
-    <div class="tarjeta">
-    <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalaction" data-bs-toggle="modal">
+    <div class="tarjeta mx-2">
+    <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
 
 
     
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalaction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -239,13 +239,13 @@ function ReadCarrusel() {
             if (pelicula[index].category == "terror") {
                 arrayPeliculasterror.push(`
 
-                <div class="tarjeta">
-                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalterror" data-bs-toggle="modal">
+                <div class="tarjeta mx-2">
+                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
             
             
                 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalterror" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -277,13 +277,13 @@ function ReadCarrusel() {
             if (pelicula[index].category == "comedia") {
                 arrayPeliculascomedia.push(`
 
-                <div class="tarjeta">
-                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalcomedia" data-bs-toggle="modal">
+                <div class="tarjeta mx-2">
+                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalcomedia${index}" data-bs-toggle="modal">
             
             
                 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalcomedia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModalcomedia${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
