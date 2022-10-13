@@ -45,9 +45,6 @@ buttonSave.addEventListener('click', () => {
 function ReadFunction() {
 
   let arrayPeliculas = [];
-  let arrayPeliculasaction = [];
-  let arrayPeliculasterror = [];
-  let arrayPeliculascomedia = [];
 
 
   if (pelicula != null) {
@@ -70,7 +67,8 @@ function ReadFunction() {
                     
                         `)
 
-      fila.innerHTML = arrayPeliculas
+      // fila.innerHTML = arrayPeliculas.join("")
+      
 
     }
 
@@ -80,7 +78,7 @@ function ReadFunction() {
   }
 }
 
-
+fila.innerHTML = "<h1>Hola Mundo</h1>"
 
 
 //Delete
