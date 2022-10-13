@@ -1,3 +1,53 @@
 .ocultar{
     display: none;
 }
+
+
+
+.carrusel {
+    width: 100vw;
+    position: relative;
+    align-self: center;
+   
+    height: 300px;
+    overflow-y: auto;
+    scrollbar-width: 0;
+    margin-left: 3px;
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.tarjeta {
+    padding: 0%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta img {
+    object-fit: cover;
+    margin: 0 15px;
+    border-radius: 15px;
+    display: flex;
+
+
+}
+
+.cuerpocard {
+    background-color: rgba(61, 60, 60, 0.322);
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 5px;
+    top: 40%;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 3px;
+    padding: 5px;
+}
+
