@@ -4,15 +4,8 @@ let category = document.getElementById('categoria');
 let description = document.getElementById('descripcion');
 let url = document.getElementById('url');
 
-let fila = document.getElementById('datatable-tbody');
-let carruselaction = document.getElementById('carruselaction');
-let carruselterror = document.getElementById('carruselterror');
-let carruselinfantil = document.getElementById('carruselinfantil');
-
-
-
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
-ReadCarrusel();
+
 ReadFunction();
 buttonSave.addEventListener('click', () => {
 
@@ -45,7 +38,7 @@ buttonSave.addEventListener('click', () => {
 function ReadFunction() {
 
   let arrayPeliculas = [];
-
+  let fila = document.getElementById('datatable-tbody');
 
   if (pelicula != null) {
     for (let index = 0; index < pelicula.length; index++) {
@@ -67,8 +60,8 @@ function ReadFunction() {
                     
                         `)
 
-      // fila.innerHTML = arrayPeliculas.join("")
-      
+      fila.innerHTML = arrayPeliculas.join("")
+
 
     }
 
@@ -78,7 +71,7 @@ function ReadFunction() {
   }
 }
 
-fila.innerHTML = "<h1>Hola Mundo</h1>"
+
 
 
 //Delete
@@ -187,96 +180,99 @@ inputbuscar.addEventListener('keyup', filtrar);
 
 
 
-function ReadCarrusel() {
+// function ReadCarrusel() {
 
-  let arrayPeliculasaction = [];
-  let arrayPeliculasterror = [];
-  let arrayPeliculasinfantil = [];
+//   let arrayPeliculasaction = [];
+//   let arrayPeliculasterror = [];
+//   let arrayPeliculasinfantil = [];
 
+//   let carruselaction = document.getElementById('carruselaction');
+//   let carruselterror = document.getElementById('carruselterror');
+//   let carruselinfantil = document.getElementById('carruselinfantil');
 
-  if (pelicula != null) {
-    for (let index = 0; index < pelicula.length; index++) {
-      //creo carrusel action
-      if (pelicula[index].category == "action") {
-        arrayPeliculasaction.push(`
+//   if (pelicula != null) {
+//     for (let index = 0; index < pelicula.length; index++) {
+//       //creo carrusel action
+//       if (pelicula[index].category == "action") {
+//         arrayPeliculasaction.push(`
 
-    <div class="tarjeta">
-    <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
+//     <div class="tarjeta">
+//     <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
 
 
     
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-dark">
-          <div class="modal-body m-0 p-0 bg-dark">
-            <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
-            <h3 class="m-2 text-light">${pelicula[index].title}</h3>
-            <h6 class="m-2 text-light">${pelicula[index].description}</h6>
-          </div>
+//     <!-- Modal -->
+//     <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//       <div class="modal-dialog">
+//         <div class="modal-content bg-dark">
+//           <div class="modal-body m-0 p-0 bg-dark">
+//             <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+//             <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+//             <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+//           </div>
         
-        </div>
-      </div>
-    </div>                   
-                        `)
-        carruselaction.innerHTML = arrayPeliculasaction
-      }
+//         </div>
+//       </div>
+//     </div>                   
+//                         `)
+//         carruselaction.innerHTML = arrayPeliculasaction
+//       }
 
-      //creo carrusel terror
-      if (pelicula[index].category == "terror") {
-        arrayPeliculasterror.push(`
+//       //creo carrusel terror
+//       if (pelicula[index].category == "terror") {
+//         arrayPeliculasterror.push(`
 
-                <div class="tarjeta">
-                <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
+//                 <div class="tarjeta">
+//                 <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
             
             
-                <!-- Modal -->
-    <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-dark">
-          <div class="modal-body m-0 p-0 bg-dark">
-            <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
-            <h3 class="m-2 text-light">${pelicula[index].title}</h3>
-            <h6 class="m-2 text-light">${pelicula[index].description}</h6>
-          </div>
+//                 <!-- Modal -->
+//     <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//       <div class="modal-dialog">
+//         <div class="modal-content bg-dark">
+//           <div class="modal-body m-0 p-0 bg-dark">
+//             <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+//             <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+//             <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+//           </div>
         
-        </div>
-      </div>
-    </div>   
+//         </div>
+//       </div>
+//     </div>   
             
-                `)
-        carruselterror.innerHTML = arrayPeliculasterror
+//                 `)
+//         carruselterror.innerHTML = arrayPeliculasterror
 
-      }
+//       }
 
-      //creo carrusel infantiles
-      if (pelicula[index].category == "infantil") {
-        arrayPeliculasinfantil.push(`
+//       //creo carrusel infantiles
+//       if (pelicula[index].category == "infantil") {
+//         arrayPeliculasinfantil.push(`
 
-                <div class="tarjeta">
-                <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
+//                 <div class="tarjeta">
+//                 <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
             
             
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalinfantil${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content bg-dark">
-                      <div class="modal-body m-0 p-0 bg-dark">
-                        <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
-                        <h3 class="m-2 text-light">${pelicula[index].title}</h3>
-                        <h6 class="m-2 text-light">${pelicula[index].description}</h6>
-                      </div>
+//                 <!-- Modal -->
+//                 <div class="modal fade" id="exampleModalinfantil${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//                   <div class="modal-dialog">
+//                     <div class="modal-content bg-dark">
+//                       <div class="modal-body m-0 p-0 bg-dark">
+//                         <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+//                         <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+//                         <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+//                       </div>
                     
-                    </div>
-                  </div>
-                </div>   
+//                     </div>
+//                   </div>
+//                 </div>   
             
-                `)
-        carruselinfantil.innerHTML = arrayPeliculasinfantil
+//                 `)
+//         carruselinfantil.innerHTML = arrayPeliculasinfantil
 
-      }
-    }
+//       }
+//     }
 
-  }
-}
+//   }
+// }
 

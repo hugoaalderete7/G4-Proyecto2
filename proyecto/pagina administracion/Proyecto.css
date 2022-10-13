@@ -30,7 +30,7 @@
 .tarjeta img {
     object-fit: cover;
     margin: 0 15px;
-    border-radius: 15px;
+    border-radius: 2px;
     display: flex;
 
 
