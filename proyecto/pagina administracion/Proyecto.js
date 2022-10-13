@@ -7,7 +7,7 @@ let url = document.getElementById('url');
 let fila = document.getElementById('datatable-tbody');
 let carruselaction = document.getElementById('carruselaction');
 let carruselterror = document.getElementById('carruselterror');
-let carruselcomedia = document.getElementById('carruselcomedia');
+let carruselinfantil = document.getElementById('carruselinfantil');
 
 
 
@@ -17,44 +17,44 @@ ReadFunction();
 buttonSave.addEventListener('click', () => {
 
 
-    if (title.value != "" && description.value != "") {
-        pelicula.push({
+  if (title.value != "" && description.value != "") {
+    pelicula.push({
 
-            id: Math.round(Math.random() * 100000),
-            title: title.value,
-            category: categoria.value,
-            description: descripcion.value,
-            url: url.value,
+      id: Math.round(Math.random() * 100000),
+      title: title.value,
+      category: categoria.value,
+      description: descripcion.value,
+      url: url.value,
 
-        })
-        localStorage.setItem('Peliculas', JSON.stringify(pelicula));
+    })
+    localStorage.setItem('Peliculas', JSON.stringify(pelicula));
 
-        title.value = "";
-        categoria.value = "";
-        descripcion.value = "";
-        url.value = "";
+    title.value = "";
+    categoria.value = "";
+    descripcion.value = "";
+    url.value = "";
 
-        ReadFunction();
-    } else {
-        alert("Campos vacíos")
-    }
-    location.reload()
+    ReadFunction();
+  } else {
+    alert("Campos vacíos")
+  }
+  location.reload()
 
 })
 
 function ReadFunction() {
 
-    let arrayPeliculas = [];
-    let arrayPeliculasaction = [];
-    let arrayPeliculasterror = [];
-    let arrayPeliculascomedia = [];
+  let arrayPeliculas = [];
+  let arrayPeliculasaction = [];
+  let arrayPeliculasterror = [];
+  let arrayPeliculascomedia = [];
 
 
-    if (pelicula != null) {
-        for (let index = 0; index < pelicula.length; index++) {
+  if (pelicula != null) {
+    for (let index = 0; index < pelicula.length; index++) {
 
-            //creo la tabla
-            arrayPeliculas.push(`
+      //creo la tabla
+      arrayPeliculas.push(`
             <tr>
            
             <td>${pelicula[index].id}</td>
@@ -70,14 +70,14 @@ function ReadFunction() {
                     
                         `)
 
-            fila.innerHTML = arrayPeliculas
+      fila.innerHTML = arrayPeliculas
 
-        }
-
-    } else {
-        arrayPeliculas = [];
-        fila.innerHTML = arrayPeliculas
     }
+
+  } else {
+    arrayPeliculas = [];
+    fila.innerHTML = arrayPeliculas
+  }
 }
 
 
@@ -86,15 +86,15 @@ function ReadFunction() {
 //Delete
 const deleteMovies = (id) => {
 
-    let deleteMovie = []
-    pelicula.map((item) => {
-        if (id != item.id) {
-            deleteMovie.push(item);
-        }
-    })
-    localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
-    location.reload()
-    ReadFunction();
+  let deleteMovie = []
+  pelicula.map((item) => {
+    if (id != item.id) {
+      deleteMovie.push(item);
+    }
+  })
+  localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
+  location.reload()
+  ReadFunction();
 }
 
 // function deleteMovie(index) {
@@ -152,13 +152,13 @@ const deleteMovies = (id) => {
 const inputbuscar = document.querySelector('#search-movie');
 let btn = document.getElementById('btn');
 const filtrar = () => {
-    fila.innerHTML = '';
+  fila.innerHTML = '';
 
-    const texto = inputbuscar.value.toLowerCase();
-    for (let peli of pelicula) {
-        let titulo = peli.title.toLowerCase();
-        if (titulo.indexOf(texto) !== -1) {
-            fila.innerHTML += `<tr>
+  const texto = inputbuscar.value.toLowerCase();
+  for (let peli of pelicula) {
+    let titulo = peli.title.toLowerCase();
+    if (titulo.indexOf(texto) !== -1) {
+      fila.innerHTML += `<tr>
            
 <td>${peli.id}</td>
 <td>${peli.title}</td>
@@ -170,15 +170,15 @@ const filtrar = () => {
 
 
 </tr>`
-        }
     }
-    if (fila.innerHTML === '') {
-        File.innerHTML += `td></td>
+  }
+  if (fila.innerHTML === '') {
+    File.innerHTML += `td></td>
         <td>Película no encontrada  </td>
         <td></td>
         <td></td>
         <td></td>`
-    }
+  }
 }
 
 inputbuscar.addEventListener('keyup', filtrar);
@@ -191,127 +191,94 @@ inputbuscar.addEventListener('keyup', filtrar);
 
 function ReadCarrusel() {
 
-    let arrayPeliculasaction = [];
-    let arrayPeliculasterror = [];
-    let arrayPeliculascomedia = [];
+  let arrayPeliculasaction = [];
+  let arrayPeliculasterror = [];
+  let arrayPeliculasinfantil = [];
 
 
-    if (pelicula != null) {
-        for (let index = 0; index < pelicula.length; index++) {
-            //creo carrusel action
-            if (pelicula[index].category == "action") {
-                arrayPeliculasaction.push(`
+  if (pelicula != null) {
+    for (let index = 0; index < pelicula.length; index++) {
+      //creo carrusel action
+      if (pelicula[index].category == "action") {
+        arrayPeliculasaction.push(`
 
-    <div class="tarjeta mx-2">
-    <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
+    <div class="tarjeta">
+    <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
 
 
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content bg-dark">
+          <div class="modal-body m-0 p-0 bg-dark">
+            <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+            <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+            <h6 class="m-2 text-light">${pelicula[index].description}</h6>
           </div>
-          <div class="modal-body">
-          <h3>${pelicula[index].title}</h3>
-          <h6>${pelicula[index].description}</h6>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+        
         </div>
       </div>
-    </div>
-
-
-    <div class="cuerpocard"></div>
-    </div>
-                    
+    </div>                   
                         `)
-                        carruselaction.innerHTML = arrayPeliculasaction
-            }
+        carruselaction.innerHTML = arrayPeliculasaction
+      }
 
-            //creo carrusel terror
-            if (pelicula[index].category == "terror") {
-                arrayPeliculasterror.push(`
+      //creo carrusel terror
+      if (pelicula[index].category == "terror") {
+        arrayPeliculasterror.push(`
 
-                <div class="tarjeta mx-2">
-                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
+                <div class="tarjeta">
+                <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
             
             
-                
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                      <h3>${pelicula[index].title}</h3>
-                      <h6>${pelicula[index].description}</h6>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-            
-                <div class="cuerpocard"></div>
-                </div>
+    <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-body m-0 p-0 bg-dark">
+            <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+            <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+            <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+          </div>
+        
+        </div>
+      </div>
+    </div>   
             
                 `)
-                carruselterror.innerHTML = arrayPeliculasterror
+        carruselterror.innerHTML = arrayPeliculasterror
 
-            }
+      }
 
-            //creo carrusel comedia
-            if (pelicula[index].category == "comedia") {
-                arrayPeliculascomedia.push(`
+      //creo carrusel infantiles
+      if (pelicula[index].category == "infantil") {
+        arrayPeliculasinfantil.push(`
 
-                <div class="tarjeta mx-2">
-                <img src="${pelicula[index].url}" width="200px" height="300px" type="button" class="btn" data-bs-target="#exampleModalcomedia${index}" data-bs-toggle="modal">
+                <div class="tarjeta">
+                <img src="${pelicula[index].url}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
             
             
-                
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalcomedia${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModalinfantil${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content bg-dark">
+                      <div class="modal-body m-0 p-0 bg-dark">
+                        <div class="modalimagen p-0"><img src="${pelicula[index].url}" class="mx-0"></div>
+                        <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+                        <h6 class="m-2 text-light">${pelicula[index].description}</h6>
                       </div>
-                      <div class="modal-body">
-                      <h3>${pelicula[index].title}</h3>
-                      <h6>${pelicula[index].description}</h6>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                      </div>
+                    
                     </div>
                   </div>
-                </div>
-            
-            
-                <div class="cuerpocard"></div>
-                </div>
+                </div>   
             
                 `)
-                carruselcomedia.innerHTML = arrayPeliculascomedia
+        carruselinfantil.innerHTML = arrayPeliculasinfantil
 
-            }
-        }
-
+      }
     }
+
+  }
 }
 

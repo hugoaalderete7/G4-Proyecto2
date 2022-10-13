@@ -8,11 +8,10 @@
     width: 100vw;
     position: relative;
     align-self: center;
-   
-    height: 300px;
+    height: 250px;
     overflow-y: auto;
     scrollbar-width: 0;
-    margin-left: 3px;
+
 }
 
 
@@ -37,17 +36,14 @@
 
 }
 
-.cuerpocard {
-    background-color: rgba(61, 60, 60, 0.322);
-    position: absolute;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 5px;
-    top: 40%;
-    font-family: 'Bebas Neue', cursive;
-    color: white;
-    font-size: 15px;
-    letter-spacing: 3px;
-    padding: 5px;
-}
 
+.modalimagen{
+    width: 100%;
+    height: fit-content;
+    
+}
+.modalimagen img{
+    object-fit: cover;
+    width: 100%;
+   
+}
