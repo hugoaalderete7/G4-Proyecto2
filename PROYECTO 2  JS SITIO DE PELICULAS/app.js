@@ -19,16 +19,13 @@ let url = document.getElementById('url');
 let id = document.getElementById('id');
 let image = document.getElementById("image");
 let carousel = document.getElementById("carousel__lista");
-// let fila = document.getElementById('datatable-tbody');
-// let search = document.getElementById('search-movie');
-// let filtrarbtn = document.getElementById('filtrarbtn');
 
 
-let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
 // createFunction();
-buttonSave.addEventListener('click', () => {
+let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
+buttonSave.addEventListener('click', () => {
 
   if (title.value != "" && description.value != "" && image.value != "") {
     pelicula.push({
@@ -63,12 +60,14 @@ function ReadFunction() {
     for (let index = 0; index < pelicula.length; index++) {
       arrayPeliculas.push(`  
 
-            <div  class="carousel__elemento">
-            <img  src="${pelicula[index].image}" alt="">
-            <a href="" id="link-trailer">${pelicula[index].url}</a>
-            <p class="text" id="title">${pelicula[index].title}</p>
-            <p class="text" id="descripcion">${pelicula[index].description}</p>
-            </div>
+         <a 
+         <div  class="carousel__elemento">
+         <img  id="image" src="${pelicula[index].image}" alt="">
+         <a href="" id="link-trailer">${pelicula[index].url}</a>
+         <p class="text" id="title">${pelicula[index].title}</p>
+         <p class="text" id="descripcion">${pelicula[index].description}</p>
+         </div>
+         </a>
             `)
     }
 
@@ -78,5 +77,5 @@ function ReadFunction() {
     carousel__lista.innerHTML = arrayPeliculas.join("")
     arrayPeliculas = [];
   }
-  ReadFunction()
 }
+ReadFunction()
