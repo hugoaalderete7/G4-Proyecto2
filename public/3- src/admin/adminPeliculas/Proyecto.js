@@ -1,15 +1,3 @@
-/*  let favorita = document.getElementById('favorita')
-    favorita.innerHTML= `
-    <div class="Padre">
-        <!--<div class="Imagen">
-            <a class="Video" href=""><img class="imagenEnSeccion"
-                    src="" alt="" width="100%"></a>
-        </div>-->
-        <div class="Titulo-Descripcion">
-            <h3 class="Titulo">Top Gun - Maverick</h3>
-            <p class="Descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, quas.</p>
-        </div>
-    </div> `  */
 
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
@@ -88,7 +76,9 @@ function ReadFunction() {
 }
 
 let identificador;
+
 function favMovies(id) {
+
     identificador = id;
     let response = pelicula.map((mess) => {
         if (mess.id == id) {
@@ -105,16 +95,21 @@ function favMovies(id) {
     localStorage.setItem("Peliculas", JSON.stringify(response));
     ReadFunction();
     Favorita();
+
 }
 
-let favorita = document.getElementById('favorita')
-
 function Favorita() {
+
     let response = pelicula.find((item) => item.id == identificador) || [];
+
     console.log(response)
-    if (response != null) {
+
+    if (response.length != 0) {
+
         let seccionImagen = [];
+
         seccionImagen.push(`
+        
         <div class="Padre">
         <!--<div class="Imagen">
             <a class="Video" href=""><img class="imagenEnSeccion"
@@ -127,25 +122,37 @@ function Favorita() {
     </div> `
         );
 
-        favorita.innerHTML = seccionImagen.join('');
+        console.log(seccionImagen)
+
+        window.onload = (function (){document.getElementById("favorita").innerHTML += seccionImagen})
 
     } else {
+        seccionImagen = [];
 
-        response = [];
-        favorita.innerHTML = seccionImagen.join('');
-
+        window.onload = (function (){document.getElementById("favorita").innerHTML += seccionImagen})
     }
 
+    /*
+    function Favorita() {
 
-
-
-
-
-
-
-
-
-
+        let response = pelicula.find((item) => item.id == identificador) || [];
+    
+        console.log(response)
+        console.log(response.title)
+        console.log(response.description)
+    
+            window.onload = (function (){document.getElementById("favorita").innerHTML += `<div class="Padre">
+            <!--<div class="Imagen">
+                <a class="Video" href=""><img class="imagenEnSeccion"
+                        src="" alt="" width="100%"></a>
+            </div>-->
+            <div class="Titulo-Descripcion">
+                <h3 class="Titulo">${response.title}</h3>
+                <p class="Descripcion">${response.description}</p>
+            </div>
+        </div> `})
+        }
+*/
     //favorito
     /*const pelidestacada = document.getElementById("pelidestacada");*/
 
@@ -323,4 +330,5 @@ function Favorita() {
         }
     }
 
-    inputbuscar.addEventListener('keyup', filtrar);
+    inputbuscar.addEventListener('keyup', filtrar)
+}
