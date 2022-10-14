@@ -109,6 +109,7 @@ const favMovies = (id) => {
     })
     console.log(destacada)
     localStorage.setItem('Peliculas', JSON.stringify(destacada));
+    location.reload()
     ReadFunction();
 }
 
