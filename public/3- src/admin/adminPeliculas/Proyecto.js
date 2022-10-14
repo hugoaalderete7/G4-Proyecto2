@@ -75,6 +75,8 @@ function ReadFunction() {
     }
 }
 
+
+/*----------------------------- HUGO - favMovies -----------------------------------------------------------------
 let identificador;
 
 function favMovies(id) {
@@ -95,9 +97,10 @@ function favMovies(id) {
     localStorage.setItem("Peliculas", JSON.stringify(response));
     ReadFunction();
     Favorita();
-
 }
-
+*/
+/*------------------------------------- HUGO FAVORITA 1 -----------------------------------------------------------
+/*
 function Favorita() {
 
     let response = pelicula.find((item) => item.id == identificador) || [];
@@ -131,8 +134,9 @@ function Favorita() {
 
         window.onload = (function (){document.getElementById("favorita").innerHTML += seccionImagen})
     }
-
-    /*
+*/
+/*------------------------------------ HUGO FAVORITA 2 -----------------------------------------------------------------------------*/
+/*
     function Favorita() {
 
         let response = pelicula.find((item) => item.id == identificador) || [];
@@ -153,10 +157,12 @@ function Favorita() {
         </div> `})
         }
 */
-    //favorito
-    /*const pelidestacada = document.getElementById("pelidestacada");*/
+/*------------------------------------------------------------------------------------------------------------------*/
 
-    /*const favMovies = (id) => {
+    //favorito
+    const pelidestacada = document.getElementById("pelidestacada");
+
+    const favMovies = (id) => {
         
         let destacada = [];
         pelicula.map((item) => {
@@ -185,7 +191,7 @@ function Favorita() {
         console.log(destacada)
         localStorage.setItem('Peliculas', JSON.stringify(destacada));
         ReadFunction();
-    }*/
+    }
 
     //Delete
     const deleteMovies = (id) => {
@@ -331,4 +337,3 @@ function Favorita() {
     }
 
     inputbuscar.addEventListener('keyup', filtrar)
-}
