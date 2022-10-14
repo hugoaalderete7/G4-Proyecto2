@@ -8,13 +8,16 @@ let fila = document.getElementById('datatable-tbody');
 let img = document.getElementById('input-img');
 
 
+let carruselaction = document.getElementById('carruselaction');
+let carruselterror = document.getElementById('carruselterror');
+let carruselinfantil = document.getElementById('carruselinfantil');
 
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
 ReadFunction();
 buttonSave.addEventListener('click', () => {
 
-   
+
     if (title.value != "" && description.value != "" && category.value != "") {
         pelicula.push({
 
@@ -23,7 +26,8 @@ buttonSave.addEventListener('click', () => {
             category: categoria.value,
             description: descripcion.value,
             url: url.value,
-            img: img.value
+            img: img.value,
+            fav: false
 
         })
         localStorage.setItem('Peliculas', JSON.stringify(pelicula));
@@ -31,7 +35,10 @@ buttonSave.addEventListener('click', () => {
         category.value = "";
         description.value = "";
         url.value = "";
-        img.value ="";
+        img.value = "";
+
+
+
 
         ReadFunction();
     } else {
@@ -54,12 +61,14 @@ function ReadFunction() {
             <td>${pelicula[index].category}</td>
             <td>${pelicula[index].description}</td>
             <td>${pelicula[index].url}</td>
+            
             <td class="hide">${pelicula[index].img}</td>
+            <td id="fav">${pelicula[index].fav}</td>
 
             <td>
             <button class="btn deleteMovies" onclick="deleteMovies(${pelicula[index].id})"><i class="fa-solid fa-trash-can"></i></button>
             <button class="btn editMovies" onclick="viewMovie('${pelicula[index].id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
-            <button id="fav${pelicula.id}" class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>
+            <button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>
             </td>
         </tr> 
         
@@ -68,7 +77,7 @@ function ReadFunction() {
             
                     
                         `)
-                        fila.innerHTML = arrayPeliculas
+            fila.innerHTML = arrayPeliculas
         }
 
     } else {
@@ -77,20 +86,53 @@ function ReadFunction() {
     }
 }
 
+//favorito
+const pelidestacada = document.getElementById("pelidestacada");
+
+const favMovies = (id) => {
+
+    let destacada = [];
+    pelicula.map((item) => {
+
+        if (id == item.id) {
+
+                item.fav = true;
+                destacada.push({
+                    ...item,
+                    fav : true
+                }
+                    
+                )
+            
+        } else {
+            destacada.push({
+                ...item,
+                fav : false
+
+            }
+                
+            )
+        }
+
+    })
+    console.log(destacada)
+    localStorage.setItem('Peliculas', JSON.stringify(destacada));
+    ReadFunction();
+}
 
 //Delete
- const deleteMovies = (id) => {
-    
-     let deleteMovie = []
-     pelicula.map((item) => {
-         if (id != item.id) {
-             deleteMovie.push(item);
-         }
-     })
-     localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
-     location.reload()
-     ReadFunction();
- }
+const deleteMovies = (id) => {
+
+    let deleteMovie = []
+    pelicula.map((item) => {
+        if (id != item.id) {
+            deleteMovie.push(item);
+        }
+    })
+    localStorage.setItem('Peliculas', JSON.stringify(deleteMovie));
+    location.reload()
+    ReadFunction();
+}
 
 //Editar
 
@@ -108,10 +150,10 @@ const viewMovie = (id) => {
     pelicula.map((item) => {
         if (item.id == id) {
             updateTitle.value = item.title,
-            updateCategory.value = item.category,
-            updateDescription.value = item.description,
-            updateUrl.value = item.url,
-            updateImg.value = item.img
+                updateCategory.value = item.category,
+                updateDescription.value = item.description,
+                updateUrl.value = item.url,
+                updateImg.value = item.img
         }
     })
 }
@@ -123,10 +165,10 @@ const updateMovie = () => {
                 ...item,
                 title: updateTitle.value,
                 category: updateCategory.value,
-                description:  updateDescription.value,
+                description: updateDescription.value,
                 url: updateUrl.value,
                 img: updateImg.value
-                
+
             });
         } else {
             updateMovie.push(item);
@@ -134,7 +176,7 @@ const updateMovie = () => {
     })
     localStorage.setItem('Peliculas', JSON.stringify(updateMovie));
     location.reload()
-     ReadFunction();
+    ReadFunction();
 }
 
 
@@ -193,27 +235,30 @@ const updateMovie = () => {
 const inputbuscar = document.querySelector('#search-movie');
 let btn = document.getElementById('btn');
 const filtrar = () => {
-fila.innerHTML = '';
+    fila.innerHTML = '';
 
     const texto = inputbuscar.value.toLowerCase();
     for (let peli of pelicula) {
         let titulo = peli.title.toLowerCase();
-        if(titulo.indexOf(texto) !== -1) {
-fila.innerHTML += `<tr>
+        if (titulo.indexOf(texto) !== -1) {
+            fila.innerHTML += `<tr>
            
 <td>${peli.id}</td>
 <td>${peli.title}</td>
 <td>${peli.category}</td>
 <td>${peli.description}</td>
+<td>true/false</td>
 <td>${peli.url}</td>
-<td><button class="btn btn-secondary" onclick="deleteMovies(${peli.id})">delete</button></td>
-
+<td>
+<button class="btn deleteMovies" onclick="deleteMovies(${peli.id})"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="btn editMovies" onclick="viewMovie('${peli.id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
+            <button id="fav${pelicula.id}" class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa-solid fa-star"></i></button>
 
 
 </tr>`
         }
     }
-    if(fila.innerHTML === ''){
+    if (fila.innerHTML === '') {
         File.innerHTML += `td></td>
         <td>Película no encontrada  </td>
         <td></td>
@@ -223,4 +268,5 @@ fila.innerHTML += `<tr>
 }
 
 inputbuscar.addEventListener('keyup', filtrar);
+
 
