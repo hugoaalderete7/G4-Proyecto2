@@ -94,12 +94,12 @@
                             <th>Descripcion</th>
                             <th>Publicado</th>
                             <th>Opciones?</th>
-
-
                         </tr>
                     </thead>
                     <tbody id="datatable-tbody">
+
                         <!-- aqui ira todo lo q carguemos -->
+                        
                     </tbody>
                 </table>
                 <div class="footer-tools">
@@ -155,7 +155,7 @@
 
 
     </main>
-    
+
     <!--Ventana Modal-->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -173,8 +173,9 @@
                         </div>
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="categoria">Categoria:</label>
-                        
-                              <select class="form-select" type="text" class="form-control" aria-describedby="emailHelp" id="categoria">
+
+                            <select class="form-select" type="text" class="form-control" aria-describedby="emailHelp"
+                                id="categoria">
                                 <option selected>Choose...</option>
                                 <option value="action">Acción</option>
                                 <option value="terror">Terror</option>
@@ -193,7 +194,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Imagen de la pelicula:</label>
-                            
+
                             <!--<button id="subir-img">Selecciona tu archivo</button>-->
                             <input type="text" id="input-img">
                             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
@@ -256,36 +257,36 @@
         </div>
     </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Categoria:</label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" id="updateCategory">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Descripcion:</label>
-                                <input type="text" class="form-control" aria-describedby="emailHelp" id="updateDescription">
-                            </div>
-    
-                            <div class="mb-3">
-                                <label class="form-label">Url del trailer</label>
-                                <input type="text" class="form-control" id="updateUrl" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Imagen de la pelicula:</label>
-                                
-                                
-                                <input type="text" id="updateImg">
-                                <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-    
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer" data-bs-dismiss="modal">
-                        <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
-                        <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="mb-3">
+        <label class="form-label">Categoria:</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" id="updateCategory">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Descripcion:</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" id="updateDescription">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Url del trailer</label>
+        <input type="text" class="form-control" id="updateUrl" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Imagen de la pelicula:</label>
+
+
+        <input type="text" id="updateImg">
+        <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+
+    </div>
+    </form>
+    </div>
+    <div class="modal-footer" data-bs-dismiss="modal">
+        <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
+        <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
+    </div>
+    </div>
+    </div>
+    </div>
     <div id="pelidestacada"></div>
 
     <footer id="footer" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
