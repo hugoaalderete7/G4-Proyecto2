@@ -1,26 +1,30 @@
 //--------------------------------------------------- navbar-----------------------------------------------------------
 let navbar = document.getElementById('navbar')
-navbar.innerHTML = `<nav class="navbar navbar-expand-sm">
-<div class="d-flex">
-    <button class="Logo m-1" type="button">
+navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
+<div class="container-fluid">
+    <button class="Logo m-1 p-1" type="button">
         <h5><b>RF</b></h5>
     </button>
-    <a class="navbar-brand nav-link text-white" href="/index.html">
-        <h4>Rolling Flow</h4>
-    </a>
-</div>
-<div class="collapse navbar-collapse d-flex justify-content-end " id="navbarTogglerDemo02">
-    <div class="navbar-nav p-5 ">
-        <a class="nav-link active text-white" aria-current="page"  href="/index.html" >Inicio</a>
-        <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" role="">Login</a>
-        <a class="nav-link text-white" href="public/3- src/pagina administracion/admin.html" >Admin</a>
+    <a class="navbar-brand text-white " href="/index.html"> <h2>Rolling Flow</h2></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" >Login</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link text-white" href="public/3- src/pagina administracion/admin.html">Admin</a>
+            </li>
+        </ul>
     </div>
 </div>
-<button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse"
-    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon bg-white"></span>
-</button>
 </nav>`
 
 // *footer*//

@@ -1,13 +1,28 @@
-body{
-    background-color: dimgrey;
+.body{
+    background-color: rgba(0, 0, 0, 0.622);
 }
-.error{
-    padding: 50px;
-    display: flex;
-    justify-content: center;
+img{
+    width: 500px;
+    ;
 }
-.img-error{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+.contenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }
+h1{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+

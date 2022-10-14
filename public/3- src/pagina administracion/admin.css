@@ -1,6 +1,4 @@
 :root {
-    
-   
     --highlight-color: #3282b8;
     --dt-padding-s: 6px;
     --dt-padding-xs: 2px;
@@ -325,9 +323,27 @@ main{
         justify-content: center!important;
     }
 
-    thead, td {
-        display: none;
+
+
+/* preguntar  */
+    tr{
+        display: flex;
+        flex-direction: column;
     }
+
+
+    /* preguntar  */
+    /* .datatable-tbody{
+        display: flex;
+        flex-direction: column;
+    } */
+
+
+    
+     /* esto estaba  */
+    /* thead, td {
+        display: none;
+    } */
 
     .modal_container {
         padding: 2em 1.5em;
@@ -364,9 +380,9 @@ main{
     .pagination {
         display: none!important;
     }
-    .pagination-responsive {
+    .pagination-responsive{
         display: flex!important;
         justify-content: center;
     }
-
+   
 }
