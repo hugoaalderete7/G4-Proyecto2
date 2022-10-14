@@ -5,7 +5,7 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
     <button class="Logo m-1 p-1" type="button">
         <h5><b>RF</b></h5>
     </button>
-    <a class="navbar-brand text-white " href="/index.html"> <h2>Rolling Flow</h2></a>
+    <a class="navbar-brand text-white mx-3 " href="/index.html"> <h2>Rolling Flow</h2></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
