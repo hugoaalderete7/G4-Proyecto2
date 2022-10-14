@@ -33,7 +33,7 @@ punto.forEach((cadaPunto, i) => {
         let posicion = i
         console.log(fondo)
         let operacion;
-        if (fondo == '2560px') {
+        if (fondo > '2000px') {
             operacion = posicion * (-50)
         } else {
             operacion = posicion * (-25)

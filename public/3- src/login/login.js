@@ -98,7 +98,7 @@ buttonLogin.addEventListener('click', (e) => {
 
 function Admin() {
     let Admin = document.getElementById('Admin')
-    Admin.innerHTML = `<a class="nav-link text-white" href="/public/3- src/admin/admin.html">Admin</a>`
+    Admin.innerHTML = `<a class="nav-link text-white" href="/public/3- src/admin/adminUsuarios/adminUsuarios.html">Admin</a>`
     let modalClose = document.getElementById('modalClose')
     modalClose.innerHTML = `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
 }
