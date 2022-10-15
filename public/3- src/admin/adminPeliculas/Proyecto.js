@@ -1,4 +1,3 @@
-
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -76,7 +75,8 @@ function ReadFunction() {
 }
 
 
-/*----------------------------- HUGO - favMovies -----------------------------------------------------------------
+/*----------------------------- HUGO - favMovies -----------------------------------------------------------------*/
+/*
 let identificador;
 
 function favMovies(id) {
@@ -99,8 +99,9 @@ function favMovies(id) {
     Favorita();
 }
 */
-/*------------------------------------- HUGO FAVORITA 1 -----------------------------------------------------------
+/*------------------------------------- HUGO FAVORITA 1 -----------------------------------------------------------*/
 /*
+
 function Favorita() {
 
     let response = pelicula.find((item) => item.id == identificador) || [];
@@ -127,12 +128,12 @@ function Favorita() {
 
         console.log(seccionImagen)
 
-        window.onload = (function (){document.getElementById("favorita").innerHTML += seccionImagen})
+        window.onload = (function (){document.getElementById("destacada").innerHTML += seccionImagen})
 
     } else {
         seccionImagen = [];
 
-        window.onload = (function (){document.getElementById("favorita").innerHTML += seccionImagen})
+        window.onload = (function (){document.getElementById("destacada").innerHTML += seccionImagen})
     }
 */
 /*------------------------------------ HUGO FAVORITA 2 -----------------------------------------------------------------------------*/
@@ -300,10 +301,12 @@ function Favorita() {
     // }
 
     // })
-
+//Buscador
     const inputbuscar = document.querySelector('#search-movie');
     let btn = document.getElementById('btn');
     const filtrar = () => {
+
+        let fila = document.getElementById("datatable-tbody");
         fila.innerHTML = '';
 
         const texto = inputbuscar.value.toLowerCase();
@@ -328,11 +331,18 @@ function Favorita() {
             }
         }
         if (fila.innerHTML === '') {
-            File.innerHTML += `td></td>
+            fila.innerHTML += `td></td>
         <td>Película no encontrada  </td>
         <td></td>
         <td></td>
-        <td></td>`
+        <td class="hide">${pelicula[index].img}</td>
+        <td id="fav">${pelicula[index].fav}</td>
+
+        <td>
+        <button class="btn deleteMovies" onclick="deleteMovies(${pelicula[index].id})"><i class="fa-solid fa-trash-can"></i></button>
+        <button class="btn editMovies" onclick="viewMovie('${pelicula[index].id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
+        <button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>
+        </td>`
         }
     }
 

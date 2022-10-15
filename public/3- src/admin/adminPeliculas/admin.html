@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,7 @@
 
 <body>
     <header class="header">
+
         <nav class="nav">
             <!--Logo-->
             <a href="./inicio.html" class="logo">
@@ -94,6 +95,14 @@
                             <th>Descripcion</th>
                             <th>Publicado</th>
                             <th>Opciones?</th>
+                            <th class="col-2">Id</th>
+                            <th class="col-2">Nombre</th>
+                            <th class="col-2">Categoria</th>
+                            <th class="col-2">Descripcion</th>
+                            <th class="col-2">Publicado</th>
+                            <th class="col-2">Opciones?</th>
+
+
                         </tr>
                     </thead>
                     <tbody id="datatable-tbody">
@@ -156,6 +165,7 @@
 
     </main>
 
+    
     <!--Ventana Modal-->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -167,6 +177,7 @@
                 <div class="modal-body">
                     <form>
 
+                       
                         <div class="mb-3">
                             <label class="form-label">Nombre de la pelicula:</label>
                             <input type="text" class="form-control" id="title">
@@ -180,6 +191,12 @@
                                 <option value="action">Acción</option>
                                 <option value="terror">Terror</option>
                                 <option value="infantil">Animación</option>
+                        
+                              <select class="form-select" type="text" class="form-control" aria-describedby="emailHelp" id="categoria">
+                                <option selected>Choose...</option>
+                                <option value="Acción">Acción</option>
+                                <option value="Terror">Terror</option>
+                                <option value="Infantil">Animación</option>
 
                             </select>
                         </div>
@@ -244,6 +261,12 @@
                             </div>
 
                             <input type="file" id="updateImg">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen de la pelicula:</label>
+                            
+                            <!--<button id="subir-img">Selecciona tu archivo</button>-->
+                            <input type="text" id="input-img">
                             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
 
                         </div>
@@ -251,6 +274,7 @@
                 </div>
                 <div class="modal-footer" data-bs-dismiss="modal">
                     <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
+                    <button type="submit" class="modal-footer-btn" id="buttonSave">Agregar</button>
                     <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
                 </div>
             </div>
@@ -289,6 +313,60 @@
     </div>
     <div id="pelidestacada"></div>
 
+    </div>
+        <!-- modal editar-->
+        
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Editar pelicula:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                           
+                            <div class="mb-3">
+                                <label class="form-label">Nombre de la pelicula:</label>
+                                <input type="text" class="form-control" id="updateTitle">
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="updateCategory">Options</label>
+                                <select class="form-select" id="updateCategory">
+                                    <option selected>Choose...</option>
+                                    <option value="Acción">Acción</option>
+                                    <option value="Terror">Terror</option>
+                                    <option value="Infantil">Animación</option>
+    
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descripcion:</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp" id="updateDescription">
+                            </div>
+    
+                            <div class="mb-3">
+                                <label class="form-label">Url del trailer</label>
+                                <input type="text" class="form-control" id="updateUrl" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Imagen de la pelicula:</label>
+                                
+                                
+                                <input type="text" id="updateImg">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+    
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer" data-bs-dismiss="modal">
+                        <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
+                        <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div id="pelidestacada"></div>
     <footer id="footer" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
         <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
             <a href="https://rollingcodeschool.com/" target="_blank"><img
@@ -310,8 +388,6 @@
         </div>
     </footer>
 
-    <script src="Proyecto.js"></script>
-
     <!--Link al admin.js -->
     <script src="admin.js"></script>
     <!-- JavaScript Bundle with Popper -->
@@ -321,6 +397,8 @@
 
 
 
+
+  <script src="/main.js"></script>
 
 
 </body>

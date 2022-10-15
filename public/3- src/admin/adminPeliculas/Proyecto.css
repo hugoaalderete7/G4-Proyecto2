@@ -1,3 +1,48 @@
 .ocultar{
     display: none;
 }
+
+
+.carrusel {
+    width: 100vw;
+    position: relative;
+    align-self: center;
+    height: 250px;
+    overflow-y: auto;
+    scrollbar-width: 0;
+
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.tarjeta {
+    padding: 0%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta img {
+    object-fit: cover;
+    margin: 0 15px;
+    border-radius: 2px;
+    display: flex;
+
+
+}
+
+
+.modalimagen{
+    width: 100%;
+    height: fit-content;
+    
+}
+.modalimagen img{
+    object-fit: cover;
+    width: 100%;
+   
+}
