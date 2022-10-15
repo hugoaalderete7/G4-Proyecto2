@@ -1,3 +1,24 @@
+/*Codigo para mostrar y ocultar la ventana modal*/
+const openModal = document.getElementById('openModal'); //Traigo el boton para mostrar la ventana modal
+const modal= document.getElementById('modal'); //Traigo la ventana modal
+
+openModal.addEventListener('click', () => {
+    /*Le saco o le añado la clase 'modal--show'*/
+    modal.classList.add('modal--show');
+}); 
+/*
+/*Traigo el boton para cerrar el modal*/
+const buttonCancelar = document.getElementById('cancelar-modal');
+
+buttonCancelar.addEventListener('click', () => cancelarModal());
+
+const cancelarModal = () => {
+    /*Le saco o le añado la clase 'modal--show'*/
+    modal.classList.remove('modal--show');
+}
+
+
+
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -5,6 +26,9 @@ let description = document.getElementById('descripcion');
 let url = document.getElementById('url');
 let id = document.getElementById('id');
 let fila = document.getElementById('datatable-tbody');
+let search = document.getElementById('search-movie');
+let filtrarbtn = document.getElementById('filtrarbtn');
+
 let img = document.getElementById('input-img');
 
 let carruselaction = document.getElementById('carruselaction');

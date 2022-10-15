@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="admin.css" />
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="/2- paginaPrincipal/css/navbar.css" />
+    <link rel="stylesheet" href="/1- public/3- src/admin/adminPeliculas/adminPeliculas.css" />
+    <link rel="stylesheet" href="/2- paginaPrincipal/css/footer.css">
     <!--Link para usar el icono de Font Awesome-->
     <script src="https://kit.fontawesome.com/574da1cd36.js" crossorigin="anonymous"></script>
 
@@ -20,7 +20,10 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="Proyecto.css">
+    <link rel="stylesheet" href="/1- public/3- src/admin/adminPeliculas/adminPeliculas.css">
+    <link rel="stylesheet" href="/2- paginaPrincipal/css/footer.css">
+    <link rel="stylesheet" href="/2- paginaPrincipal/css/navbar.css">
+    <link rel="stylesheet" href="/2- paginaPrincipal/css/style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
@@ -28,44 +31,16 @@
 </head>
 
 <body>
-    <header class="header">
-
-        <nav class="nav">
-            <!--Logo-->
-            <a href="./inicio.html" class="logo">
-                <img src="https://th.bing.com/th/id/R.46284f2db16b8d5326582fe2af1df7f9?rik=e5Q5dhLfVQRKhQ&riu=http%3a%2f%2fvignette3.wikia.nocookie.net%2farresteddevelopment%2fimages%2f6%2f6e%2fNetflix_Logo.jpg%2frevision%2flatest%3fcb%3d20120105151323&ehk=pUpQ7MkkCBHOYcxHQG%2b9gv03TUBHbLZcuKlwJx3ICNM%3d&risl=&pid=ImgRaw&r=0"
-                    alt="Logo Rolling movies" />
-            </a>
-            <!--Boton hamburguesa-->
-            <button class="nav_toggle hide" aria-label="Abrir menú">
-                <span id="bars">
-                    <i class="fa-solid fa-bars fa-lumos"></i>
-                </span>
-                <span id="cross" class="hide">
-                    <i class="fa-solid fa-xmark"></i>
-                </span>
-            </button>
-            <!--Menu-->
-            <ul class="nav_menu">
-                <li class="nav_menu_item">
-                    <a href="inicio.html" class="nav_menu_link nav_link">Inicio |</a>
-                </li>
-                <li class="nav_menu_item">
-                    <a href="contacto.html" class="nav_menu_link nav_link">Contacto |</a>
-                </li>
-                <li class="nav_menu_item">
-                    <a href="#" class="nav_menu_link nav_link">Acerca de |</a>
-                </li>
-                <li class="nav_menu_item hide">
-                    <a href="admin.html" class="nav_menu_link nav_link">Administración |</a>
-                </li>
-                <li class="nav_menu_item" id="menuLogin">
-                    <a href="#" class="nav_menu_link nav_link">Login <i class="fa-solid fa-angle-down"></i> |</a>
-
-                </li>
-            </ul>
+    <header>
+        <!-------------------------------------- Navbar ------------------------------------------------------------------>
+        <nav id="navbar">
 
         </nav>
+        <!-- enlace para abrir modal login desde admin  -->
+        <section id="loginModal">
+
+        </section>
+        <!-------------------------------------- Navbar ------------------------------------------------------------------>
     </header>
     <main>
         <div id="container" class="container">
@@ -74,7 +49,6 @@
                 <h1 id="datatable-title">Administrar Peliculas</h1>
                 <button class="button-new-movie" type="button" id="openModal" data-bs-toggle="modal"
                     data-bs-target="#modal">
-
                     Nueva +
                 </button>
             </div>
@@ -158,7 +132,6 @@
 
     </main>
 
-
     <!--Ventana Modal-->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -169,8 +142,6 @@
                 </div>
                 <div class="modal-body">
                     <form>
-
-
                         <div class="mb-3">
                             <label class="form-label">Nombre de la pelicula:</label>
                             <input type="text" class="form-control" id="title">
@@ -184,15 +155,7 @@
                                 <option value="action">Acción</option>
                                 <option value="terror">Terror</option>
                                 <option value="infantil">Animación</option>
-
-                                <select class="form-select" type="text" class="form-control"
-                                    aria-describedby="emailHelp" id="categoria">
-                                    <option selected>Choose...</option>
-                                    <option value="Acción">Acción</option>
-                                    <option value="Terror">Terror</option>
-                                    <option value="Infantil">Animación</option>
-
-                                </select>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Descripcion:</label>
@@ -214,96 +177,11 @@
                     </form>
                 </div>
                 <div class="modal-footer" data-bs-dismiss="modal">
-                    <button type="submit" class="modal-footer-btn" id="buttonSave">Agregar</button>
-                    <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal editar-->
-
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">Editar pelicula:</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-
-                        <div class="mb-3">
-                            <label class="form-label">Nombre de la pelicula:</label>
-                            <input type="text" class="form-control" id="updateTitle">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Categoria:</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" id="updateCategory">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Descripcion:</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" id="updateDescription">
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Url del trailer</label>
-                            <input type="text" class="form-control" id="updateUrl" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Imagen de la pelicula:</label>
-                            <div class="previewImages">
-                            </div>
-
-                            <input type="file" id="updateImg">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Imagen de la pelicula:</label>
-
-                            <!--<button id="subir-img">Selecciona tu archivo</button>-->
-                            <input type="text" id="input-img">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer" data-bs-dismiss="modal">
                     <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
-                    <button type="submit" class="modal-footer-btn" id="buttonSave">Agregar</button>
                     <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Categoria:</label>
-        <input type="text" class="form-control" aria-describedby="emailHelp" id="updateCategory">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Descripcion:</label>
-        <input type="text" class="form-control" aria-describedby="emailHelp" id="updateDescription">
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Url del trailer</label>
-        <input type="text" class="form-control" id="updateUrl" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Imagen de la pelicula:</label>
-
-
-        <input type="text" id="updateImg">
-        <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
-
-    </div>
-    </form>
-    </div>
-    <div class="modal-footer" data-bs-dismiss="modal">
-        <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
-        <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
-    </div>
-    </div>
-    </div>
     </div>
     <div id="pelidestacada"></div>
 
@@ -381,15 +259,18 @@
                     class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
         </div>
     </footer>
-
+    <!----------------------------------------------------------------- footer----------------------------------------------------------------->
+    <section id="footerAdmin"></section>
+    <!-- --------------------------------------------------- modal login  --------------------------------------------------->
+    <section id="loginModal"></section>
 
     <!--Link .js -->
-    <script src="/app.js"></script>
-    <script src="/public/3- src/admin/adminPeliculas/admin.js"></script>
-    <script src="/public/3- src/admin/adminPeliculas/Proyecto.js"></script>
-    <script src="/public/3- src/admin/adminPeliculas/carrusel.js"></script>
+    <script src="/1- public/3- src/admin/adminPeliculas/adminPeliculas.js"></script>
+    <script src="/1- public/3- src/admin/adminPeliculas/carrusel.js"></script>
+    <script src="/2- paginaPrincipal/app.js"></script>
 
     <!-- JavaScript Bundle with Popper -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
