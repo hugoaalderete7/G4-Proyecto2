@@ -44,6 +44,7 @@ buttonSave.addEventListener('click', () => {
             title: title.value,
             category: category.value,
             description: description.value,
+            publicado: false,
             url: url.value,
             img: img.value,
             fav: false
@@ -71,13 +72,26 @@ function ReadFunction() {
             <td>${pelicula[index].title}</td>
             <td>${pelicula[index].category}</td>
             <td>${pelicula[index].description}</td>
-            <td>${pelicula[index].url}</td>
-            <td class="hide">${pelicula[index].img}</td>
-            <td id="fav">${pelicula[index].fav}</td>
-            <td>
+            <!--<td>${pelicula[index].url}</td>-->
+            <!--<td class="hide">${pelicula[index].img}</td>-->
+            <!--<td id="fav">${pelicula[index].fav}</td>-->
+            <div>
+            ${pelicula[index].publicado == true ?
+                `<td><input type="checkbox" checked onclick="updatePublicado(${pelicula[index].id})"></td>`
+                :
+                `<td><input type="checkbox" onclick="updatePublicado(${pelicula[index].id})"></td>`
+            }
+            </div>
+            <td class="d-flex">
             <button class="btn deleteMovies" onclick="deleteMovies(${pelicula[index].id})"><i class="fa-solid fa-trash-can"></i></button>
             <button class="btn editMovies" onclick="viewMovie('${pelicula[index].id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
-            <button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>
+            <div>
+            ${pelicula[index].fav == true ?
+                `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>`
+                :
+                `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa fa-star-o"></i></button>`
+            }
+            </div>
             </td>
         </tr>      
             `)
@@ -89,10 +103,29 @@ function ReadFunction() {
     }
 }
 
+// Check Publicado
 
-/*----------------------------- HUGO - favMovies -----------------------------------------------------------------*/
-/*
 let identificador;
+
+function updatePublicado (id) {
+    identificador = id;
+    let response = pelicula.map((mess) => {
+        if (mess.id == id) {
+            let update = {
+                ...mess,
+                publicado: !mess.publicado
+            }
+            return update;
+        } else {
+            return mess;
+        }
+    })
+    localStorage.setItem("Peliculas", JSON.stringify(response));
+    console.log(pelicula)
+    ReadFunction();
+}
+
+//------------------ favMovies () ------------------------------------
 
 function favMovies(id) {
 
@@ -101,19 +134,23 @@ function favMovies(id) {
         if (mess.id == id) {
             let update = {
                 ...mess,
-                fav: !mess.fav
+                fav: true
             }
             return update;
         } else {
-            return mess;
-        }
+            let update = {
+                ...mess,
+                fav: false
+            } 
+            return update;
+            }
     })
     console.log(response)
     localStorage.setItem("Peliculas", JSON.stringify(response));
     ReadFunction();
-    Favorita();
+    //Favorita();
 }
-*/
+
 /*------------------------------------- HUGO FAVORITA 1 -----------------------------------------------------------*/
 /*
 
@@ -174,31 +211,6 @@ function Favorita() {
         }
 */
 /*------------------------------------------------------------------------------------------------------------------*/
-
-//favorito
-const pelidestacada = document.getElementById("pelidestacada");
-
-const favMovies = (id) => {
-    let destacada = [];
-    pelicula.map((item) => {
-        if (id == item.id) {
-            item.fav = true;
-            destacada.push({
-                ...item,
-                fav: true
-            })
-        } else {
-            destacada.push({
-                ...item,
-                fav: false
-            })
-        }
-    })
-    console.log(destacada)
-    localStorage.setItem('Peliculas', JSON.stringify(destacada));
-    ReadFunction();
-}
-
 //Delete
 const deleteMovies = (id) => {
 
@@ -255,57 +267,6 @@ const updateMovie = () => {
 }
 
 
-// function deleteMovie(index) {
-
-//     let newgetLocalStorage = JSON.parse(localStorage.getItem("Peliculas"));
-//     let movie = [];
-
-//     newgetLocalStorage.splice(index, 1);
-
-//     for (let i = 0; i < newgetLocalStorage.length; i++) {
-//         movie.push(newgetLocalStorage[i]);
-//     }
-
-//     localStorage.setItem('Peliculas', JSON.stringify(movie));
-
-//     ReadFunction();
-//     window.location.reload()
-// }
-
-// let celda = document.getElementsByTagName('td');
-
-// inputbuscar.addEventListener('keyup', (e)=>{
-//     let texto = e.target.value
-
-//     let er = new RegExp(texto, 'i')
-
-//     for (let i = 0; i < celda.length; i++) {
-//         let valor = celda[i]
-
-
-//         if (er.test(valor.innerText)) {
-// valor.classList.remove("ocultar")
-//         } else {
-
-//             valor.classList.add("ocultar")
-//         }
-//     }
-// })
-
-// document.addEventListener("keyup", e=>{
-//     if(e.target.matches("#search-movie")){
-
-
-
-//         document.querySelectorAll(".articulo").forEach(titulo =>{
-//             titulo.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-//             ?titulo.classList.remove("ocultar")
-//             :titulo.classList.add("ocultar")
-
-//         })
-// }
-
-// })
 //Buscador
 const inputbuscar = document.querySelector('#search-movie');
 let btn = document.getElementById('btn');
@@ -319,18 +280,31 @@ const filtrar = () => {
         let titulo = peli.title.toLowerCase();
         if (titulo.indexOf(texto) !== -1) {
             fila.innerHTML += `<tr>
-           
-<td>${peli.id}</td>
-<td>${peli.title}</td>
-<td>${peli.category}</td>
-<td>${peli.description}</td>
-<td>true/false</td>
-<td>${peli.url}</td>
-<td>
-<button class="btn deleteMovies" onclick="deleteMovies(${peli.id})"><i class="fa-solid fa-trash-can"></i></button>
-            <button class="btn editMovies" onclick="viewMovie('${peli.id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
-            <button id="fav${pelicula.id}" class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa-solid fa-star"></i></button>
-</tr>`
+                                <td>${peli.id}</td>
+                                <td>${peli.title}</td>
+                                <td>${peli.category}</td>
+                                <td>${peli.description}</td>
+                                <!--<td>true/false</td>-->
+                                <!--<td>${peli.url}</td>-->
+                                <div>
+                                    ${peli.publicado == true ?
+                                        `<td><input type="checkbox" checked onclick="updatePublicado(${peli.id})"></td>`
+                                        :
+                                        `<td><input type="checkbox" onclick="updatePublicado(${peli.id})"></td>`
+                                    }
+                                </div>
+                                <td class="d-flex">
+                                    <button class="btn deleteMovies" onclick="deleteMovies(${peli.id})"><i class="fa-solid fa-trash-can"></i></ button>
+                                    <button class="btn editMovies" onclick="viewMovie('${peli.id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
+                                    <div>
+                                    ${peli.fav == true ?
+                                        `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa-solid fa-star"></i></button>`
+                                        :
+                                        `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa fa-star-o"></i></button>`
+                                    }
+                                    </div>
+                                </td>
+                            </tr>`
         }
     }
     if (fila.innerHTML === '') {
@@ -350,3 +324,6 @@ const filtrar = () => {
 }
 
 inputbuscar.addEventListener('keyup', filtrar)
+
+
+
