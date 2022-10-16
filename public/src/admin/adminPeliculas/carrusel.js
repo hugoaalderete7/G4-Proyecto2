@@ -1,36 +1,30 @@
-
-/*let buttonSave = document.getElementById('buttonSave');*/
+/*
+let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
 let description = document.getElementById('descripcion');
-let url = document.getElementById('url');
-
-
-
-
-
+let url = document.getElementById('url');*/
+/*
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
+*/
 
 ReadCarrusel();
 
 buttonSave.addEventListener('click', () => {
-
-
   if (title.value != "" && description.value != "") {
     pelicula.push({
-
       id: Math.round(Math.random() * 100000),
       title: title.value,
-      category: categoria.value,
-      description: descripcion.value,
+      category: category.value,
+      description: description.value,
       url: url.value,
 
     })
     localStorage.setItem('Peliculas', JSON.stringify(pelicula));
 
     title.value = "";
-    categoria.value = "";
-    descripcion.value = "";
+    category.value = "";
+    description.value = "";
     url.value = "";
 
     ReadCarrusel()

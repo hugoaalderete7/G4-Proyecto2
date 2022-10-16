@@ -36,7 +36,6 @@ let carruselinfantil = document.getElementById('carruselinfantil');
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 ReadFunction();
 
-
 buttonSave.addEventListener('click', () => {
     if (title.value != "" && description.value != "" && category.value != "") {
         pelicula.push({
