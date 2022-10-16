@@ -31,8 +31,8 @@ function ReadFunction() {
     }
 }
 
-const search = document.getElementById('search');
-const searchButton = document.getElementById('searchButton');
+const searchs = document.getElementById('search');
+const searchButtons = document.getElementById('searchButton');
 const searchUsersView = document.getElementById('searchUsersView');
 
 /*searchButton.addEventListener('click', () => {
@@ -56,11 +56,11 @@ const searchUsersView = document.getElementById('searchUsersView');
 })*/
 
 
-searchButton.addEventListener('click', () => {
+searchButtons.addEventListener('click', () => {
 
     let users = JSON.parse(localStorage.getItem("users"));
-    if (search.value != "") {
-        let response = users.filter((item) => item.name == search.value)
+    if (searchs.value != "") {
+        let response = users.filter((item) => item.name == searchs.value)
         console.log(response);
         let array = [];
         for (let i = 0; i < response.length; i++) {
@@ -108,10 +108,10 @@ let newadminAdmin = document.getElementById("newadminAdmin");
 
 
 
-let identifier;
+let identifiers;
 
 function ViewInput(id) {
-    identifier = id;
+    identifiers = id;
     let user = users.find ((item)=> item.id == id)
     newidAdmin.value = user.id                                     
     newnameAdmin.value = user.name                               
@@ -127,7 +127,7 @@ function ViewInput(id) {
 
 function UpdateAdmin() {
     let response = users.map((item) => {
-        if (item.id == identifier) {
+        if (item.id == identifiers) {
             let update = {
                 ...item,
                 id: newidAdmin.value,

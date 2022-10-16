@@ -3,10 +3,10 @@ let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
 let description = document.getElementById('descripcion');
-let url = document.getElementById('url');*/
-/*
+let url = document.getElementById('url');
+
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
-*/
+
 
 ReadCarrusel();
 
@@ -132,5 +132,5 @@ function ReadCarrusel() {
   
     }
   }
-
+*/
   
