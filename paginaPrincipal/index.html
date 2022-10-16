@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- css index  -->
-    <link rel="stylesheet" href="/2- paginaPrincipal/css/style.css">
-    <!-- css login  -->
-    <link rel="stylesheet" href="/2- paginaPrincipal/css/navbar.css">
-    <!-- css footer  -->
-    <link rel="stylesheet" href="/2- paginaPrincipal/css/footer.css">
+    <title>Rolling Flow</title>
+
+    <link rel="stylesheet" href="/paginaPrincipal/css/style.css">
+    <link rel="stylesheet" href="/paginaPrincipal/css/navbar.css">
+    <link rel="stylesheet" href="/paginaPrincipal/css/footer.css">
+    <link rel="stylesheet" href="/public/src/admin/adminPeliculas/adminPeliculas.css">
+    <link rel="stylesheet" href="/public/src/admin/adminUsuarios/admiUsuarios.css">
+    <link rel="stylesheet" href="/public/src/error/error.css">
+    <link rel="stylesheet" href="/public/src/admin/login/login.css">
+
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,6 +26,7 @@
     <header id="navbar">
 
         <!-------------------------------------- Inicio Navbar ------------------------------------------------------------------>
+        <!--
         <nav class="navbar navbar-expand-lg bg-dark ">
             <div class="container-fluid">
                 <button class="Logo m-1 p-1" type="button">
@@ -44,14 +48,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle">Login</a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link text-white"
-                                href="public/3- src/pagina administracion/admin.html">Admin</a>
+                        <li class="nav-item " id="Admin">
+                            
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    -->
         <!-------------------------------------- Fin Navbar ------------------------------------------------------------------>
 
     </header>
@@ -61,7 +65,7 @@
             <div class="Padre">
                 <div class="Imagen">
                     <a class="Video" href="https://www.youtube.com/embed/zzBIzYmxatU"><img class="imagenEnSeccion"
-                            src="/public/1- images/1- Top Gun Recortado.jpg" alt="" width="100%"></a>
+                            src="/public/images/1- Top Gun Recortado.jpg" alt="" width="100%"></a>
                 </div>
                 <div class="Titulo-Descripcion">
                     <h3 class="Titulo">Top Gun - Maverick</h3>
@@ -153,22 +157,26 @@
             <p>Rolling Movies ©</p>
         </div>
         <div class="footer_redes order-2 order-md-3 col-xl-4 col-12 mx-md-0 my-4">
-            <a class="mx-auto" href="/public/3- src/error/error.html"><i
+            <a class="mx-auto" href="/public/src/error/error.html"><i
                     class="fa-brands fa-instagram icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="/public/3- src/error/error.html"><i
+            <a class="mx-auto" href="/public/src/error/error.html"><i
                     class="fa-brands fa-facebook icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="/public/3- src/error/error.html"><i
+            <a class="mx-auto" href="/public/src/error/error.html"><i
                     class="fa-brands fa-whatsapp icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="/public/3- src/error/error.html"><i
+            <a class="mx-auto" href="/public/src/error/error.html"><i
                     class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
         </div>
     </footer>
     <!-- --------------------------------------------fotter------------------------------------->
 
-    <script src="/2- paginaPrincipal/app.js"></script>
-    <script src="/1- public/3- src/admin/adminUsuarios/adminUsuarios.js"></script>
-    <script src="/1- public/3- src/admin/adminPeliculas/carrusel.js"></script>
-    <script src="/1- public/3- src/admin/adminPeliculas/adminPeliculas.js"></script>
+    <script src="/paginaPrincipal/app.js"></script>
+    <script src="/public/src/admin/adminPeliculas/adminPeliculas.js"></script>
+    <script src="/public/src/admin/adminPeliculas/carrusel.js"></script>
+    <script src="/public/src/admin/adminUsuarios/adminUsuarios.js"></script>
+    <script src="/public/src/admin/login/login.js"></script>
+    <script src="/public/src/error/error.js" ></script>
+
+
 
     <!--Link para usar el icono de Font Awesome-->
     <script src="https://kit.fontawesome.com/574da1cd36.js" crossorigin="anonymous"></script>
