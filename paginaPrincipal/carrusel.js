@@ -1,4 +1,4 @@
-/*
+
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -9,7 +9,7 @@ let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
 
 ReadCarrusel();
-
+/*
 buttonSave.addEventListener('click', () => {
   if (title.value != "" && description.value != "") {
     pelicula.push({
@@ -35,7 +35,7 @@ buttonSave.addEventListener('click', () => {
   location.reload()
 
 })
-
+*/
 
 function ReadCarrusel() {
 
@@ -54,7 +54,7 @@ function ReadCarrusel() {
           arrayPeliculasaction.push(`
   
       <div class="tarjeta">
-      <img src="${pelicula[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
+      <img src="${pelicula[index].img}" width="200em" height="200em" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
   
   
       
@@ -63,7 +63,7 @@ function ReadCarrusel() {
         <div class="modal-dialog">
           <div class="modal-content bg-dark">
             <div class="modal-body m-0 p-0 bg-dark">
-              <div class="modalimagen p-0"><img src="${pelicula[index].img}" class="mx-0"></div>
+              <div class="modalimagen p-0"><img src="${pelicula[index].img}" class="mx-0" height="450em"></div>
               <h3 class="m-2 text-light">${pelicula[index].title}</h3>
               <h6 class="m-2 text-light">${pelicula[index].description}</h6>
             </div>
@@ -132,5 +132,4 @@ function ReadCarrusel() {
   
     }
   }
-*/
   
