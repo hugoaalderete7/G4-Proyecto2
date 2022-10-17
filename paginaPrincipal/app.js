@@ -1,4 +1,3 @@
-//--------------------------------------------------- navbar-----------------------------------------------------------
 let navbar = document.getElementById('navbar')
 navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
 <div class="container-fluid">
@@ -14,20 +13,21 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
     <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="/index.html">Inicio</a>
+                <a class="nav-link active text-white" aria-current="page" href="/paginaPrincipal/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" >Login</a>
+            <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" role="">Login</a>  
             </li>
-            <li class="nav-item ">
-                <a class="nav-link text-white" href="public/3- src/pagina administracion/admin.html">Admin</a>
-            </li>
+            <li class="nav-item" id="Admin">
+                
+            
         </ul>
     </div>
 </div>
 </nav>`
 
 // *footer*//
+/*
 let footerAdmin = document.getElementById('footerAdmin')
 footerAdmin.innerHTML = ` <footer id="footer-contacto" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
 <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
@@ -49,3 +49,38 @@ footerAdmin.innerHTML = ` <footer id="footer-contacto" class="footer_movies cont
             class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
 </div>
 </footer>`
+*/
+/*------------ INICIO CARRUSEL HUGO ---------------------------------*/
+/*
+
+const grande = document.querySelector('.grande')
+const punto = document.querySelectorAll('.punto')
+const celu = document.querySelector('.celu')
+let fondo = window.getComputedStyle(grande, null).getPropertyValue("width");
+
+punto.forEach((cadaPunto, i) => {
+
+    punto[i].addEventListener('click', () => {
+
+        let posicion = i
+        console.log(fondo)
+        let operacion;
+        if (fondo > '2000px') {
+            operacion = posicion * (-50)
+        } else {
+            operacion = posicion * (-25)
+        }
+
+        grande.style.transform = `translateX(${operacion}%)`
+
+        punto.forEach((cadaPunto, i) => {
+            punto[i].classList.remove('activo')
+        })
+
+        punto[i].classList.add('activo')
+    })
+})
+*/
+/*------------ FIN CARRUSEL HUGO ---------------------------------*/
+
+

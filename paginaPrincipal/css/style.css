@@ -1,0 +1,204 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-image: url(/public/images/fondoNegro.jpg);
+  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(56, 51, 51, 0.275) 100%); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;  
+}  
+
+.Padre{
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  background-color: none;
+  margin-top: 9vh;
+}
+
+.Titulo-Descripcion{
+  position:absolute;
+  width: 25%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.Imagen{
+  position: absolute;
+  width: 100%;
+}
+
+.imagenEnSeccion{
+  padding: 1%;
+  height: 45vh;
+  /*
+  box-shadow: 0px 0px 20px 20px blue;
+  */
+  width: 100%;
+}
+
+.Titulo{
+  color: white;
+}
+
+/* .img-imagen-video{
+  /* border: solid 2px; */
+  /* margin-top: 0.5%; */
+  
+  /* } */
+  
+  .Descripcion{
+    color: white;
+  }
+  
+  .Video{
+    /* color:white; */
+    display: flex;
+    justify-content: center;
+  }
+  /*
+  .ocultar{
+    display: none;
+  }
+*/
+  .carrusel {
+    width: 100vw;
+    position: relative;
+    align-self: center;
+    height: 240px;
+  overflow-y: auto;
+  scrollbar-width: 10px;
+}
+/*
+::-webkit-scrollbar {
+  display: none;
+}
+*/
+
+.tarjeta {
+  padding: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tarjeta img {
+  object-fit: cover;
+  margin: 0 15px;
+  border-radius: 2px;
+  display: flex;
+}
+
+.modalimagen{
+  width: 100%;
+  height: fit-content;
+}
+
+.modalimagen img{
+  object-fit: cover;
+  width: 100%;
+}
+
+/*------------------- INICIO Carrusel Hugo -----------------*/
+/*
+.carrousel{
+    width: 100%;;
+    max-width: 120 em;
+    @include neo (1,1em,1em);
+    overflow: hidden;
+    background-color: black;
+}
+.carrousel .grande {
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between; 
+    align-items: center;
+    @include neo (1,1em,1em);
+    padding: 2 em;
+    transition: all .5s ease;
+    transform: translateX(0%);
+    background-color: blueviolet;
+} 
+.carrousel  .img{
+    width: calc(100%/8);
+    min-height: 10vh;
+    @include neo (1, 1 em, 1 em);
+    height: 35vh;
+    padding-top: 1%;
+    background-color: chartreuse;
+}
+.carrousel .puntos {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: black;
+}
+.carrousel .punto {
+    width: 1em;
+    height: 1em;
+    margin: 1em 1em 0;
+   @include neo (1,1em, 0.6em);
+   background-color:orchid;
+}
+.carrousel .punto.activo {
+    background-color: red;
+}
+.celu{
+    display: none;
+    background-color: rgb(218,212,214);
+    justify-content:end;
+}
+*/
+/*------------------- FIN Carrusel Hugo -----------------*/
+
+
+  @media (max-width: 600px) {
+
+    .Padre{
+      flex-direction: column;
+      position: relative;
+    }
+
+    .Imagen{
+      position: absolute;
+    }
+   
+}
+ 
+@media (max-width < 400px){
+
+  .Padre{
+    flex-direction: column;
+    position: relative;
+  }
+
+}
+
+/*@media (max-width: 576px){
+  .carrousel .grande {
+      width: 400%;
+      transform: translateX(0%);
+  }
+  .carrousel  .img{
+      width: calc(100%/8);
+      
+  }
+  .celu {
+      display: flex;
+      background-color: rgb(0,0,0);
+      justify-content:center;
+  }
+}*/
+
+ 
+ 
+ 
+ 
+ 

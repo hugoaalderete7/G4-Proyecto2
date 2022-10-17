@@ -1,11 +1,12 @@
 let loginModal = document.getElementById('loginModal');
-loginModal.innerHTML =`<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+loginModal.innerHTML =
+    `<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
 tabindex="-1">
 <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
         <div class="modal-header" id="modalClose">
             <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Iniciar Sesion</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
         </div>
         <div class="modal-body">
             <form>
@@ -84,22 +85,24 @@ buttonLogin.addEventListener('click', (e) => {
         let response = users.find((item) => item.email == emailLogin.value && item.password == passwordLogin.value) || []
         if (response != [] && response.id != null && response.admin == 'false') {
             window.location.href = "index.html"
-        } else if (response != [] && response.id != null && response.admin != 'false'){
+        } else if (response != [] && response.id != null && response.admin != 'false') {
             Admin();
-        }else {
+        } else {
             alert("Campos Incorrectos")
         }
     } else {
         alert("Campos Incompletos")
     }
+
 });
+
 function Admin() {
-    let Admin =document.getElementById('Admin');
-    Admin.innerHTML = `<a class="nav-link text-white" href="/public/3- src/admin/admin.html">Admin</a>`
+    let Admin = document.getElementById('Admin')
+    Admin.innerHTML = `<a class="nav-link text-white" href="/public/src/admin/adminUsuarios/adminUsuarios.html"> Admin </a> </li> <li class="nav-item"> <a href="/public/src/admin/adminPeliculas/adminPeliculas.html"> Admin2 </a> </li>`
     let modalClose = document.getElementById('modalClose')
     modalClose.innerHTML = `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
 }
-    
+
 buttonRegister.addEventListener('click', () => {
     let users = JSON.parse(localStorage.getItem('users')) || [];
     if (nameRegister.value != "" && emailRegister.value != "" && passwordRegister.value != "") {
@@ -108,12 +111,13 @@ buttonRegister.addEventListener('click', () => {
             name: nameRegister.value,
             email: emailRegister.value,
             password: passwordRegister.value,
-            admin: false
+            admin: 'false',
         })
         localStorage.setItem('users', JSON.stringify(users));
     } else {
         alert("Campos Incompletos");
     }
+
 })
 
 
