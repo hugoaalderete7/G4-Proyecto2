@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/paginaPrincipal/css/footer.css" />
-    <link rel="stylesheet" href="/paginaPrincipal/css/navbar.css" />
-    <link rel="stylesheet" href="/paginaPrincipal/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/public/src/admin/adminPeliculas/adminPeliculas.css">
-    <link rel="stylesheet" href="/public/src/error/error.css">
 
     <!--Link para usar el icono de Font Awesome-->
     <script src="https://kit.fontawesome.com/574da1cd36.js" crossorigin="anonymous"></script>
@@ -32,9 +31,33 @@
 <body>
     <header>
         <!-------------------------------------- Navbar ------------------------------------------------------------------>
-        <nav id="navbar">
-
-        </nav>
+        <nav class="navbar navbar-expand-lg bg-dark ">
+            <div class="container-fluid">
+                <button class="Logo m-1 p-1" type="button">
+                    <h5><b>RF</b></h5>
+                </button>
+                <a class="navbar-brand text-white " href="/index.html"> <h2>Rolling Flow</h2></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="/paginaPrincipal/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle" role="">Login</a>  
+                        </li>
+                        <li class="nav-item" id="Admin">
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        
         <!-- enlace para abrir modal login desde admin  -->
         <section id="loginModal">
 
@@ -257,16 +280,18 @@
                     class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
         </div>
     </footer>
-    <!----------------------------------------------------------------- footer----------------------------------------------------------------->
-    <section id="footerAdmin"></section>
+   
     <!-- --------------------------------------------------- modal login  --------------------------------------------------->
     <section id="loginModal"></section>
 
     <!--Link .js -->
-    <script src="/public/src/admin/adminPeliculas/adminPeliculas.js"></script>
-    <script src="/public/src/admin/adminPeliculas/carrusel.js"></script>
-    <script src="/paginaPrincipal/app.js"></script>
+
+
+    
     <script src="/public/src/admin/login/login.js"></script>
+    <script src="/public/src/admin/adminPeliculas/adminPeliculas.js"></script>
+    <script src="/app.js"></script>
+
     
 
     <!-- JavaScript Bundle with Popper -->

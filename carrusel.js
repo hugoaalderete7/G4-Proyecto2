@@ -1,4 +1,4 @@
-
+/*
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -8,8 +8,8 @@ let url = document.getElementById('url');
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
 
-ReadCarrusel();
-/*
+
+
 buttonSave.addEventListener('click', () => {
   if (title.value != "" && description.value != "") {
     pelicula.push({
@@ -35,8 +35,8 @@ buttonSave.addEventListener('click', () => {
   location.reload()
 
 })
-*/
 
+ReadCarrusel();
 function ReadCarrusel() {
 
     let arrayPeliculasaction = [];
@@ -132,4 +132,4 @@ function ReadCarrusel() {
   
     }
   }
-  
+  */

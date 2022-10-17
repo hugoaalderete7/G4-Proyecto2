@@ -1,24 +1,3 @@
-/*
-Codigo para mostrar y ocultar la ventana modal
-const openModal = document.getElementById('openModal'); //Traigo el boton para mostrar la ventana modal
-const modal = document.getElementById('modal'); //Traigo la ventana modal
-
-openModal.addEventListener('click', () => {
-    Le saco o le añado la clase 'modal--show'
-    modal.classList.add('modal--show');
-});
-
-Traigo el boton para cerrar el modal
-const buttonCancelar = document.getElementById('cancelar-modal');
-
-buttonCancelar.addEventListener('click', () => cancelarModal());
-
-const cancelarModal = () => {
-    Le saco o le añado la clase 'modal--show'
-    modal.classList.remove('modal--show');
-}
-*/
-
 let buttonSave = document.getElementById('buttonSave');
 let title = document.getElementById('title');
 let category = document.getElementById('categoria');
@@ -36,31 +15,36 @@ let carruselinfantil = document.getElementById('carruselinfantil');
 
 
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
-ReadFunction();
 
+
+
+if (buttonSave != null) {
 buttonSave.addEventListener('click', () => {
-    if (title.value != "" && description.value != "" && category.value != "") {
-        pelicula.push({
-            id: Math.round(Math.random() * 100000),
-            title: title.value,
-            category: category.value,
-            description: description.value,
-            publicado: false,
-            url: url.value,
-            img: img.value,
-            fav: false
-        })
-        localStorage.setItem('Peliculas', JSON.stringify(pelicula));
-        title.value = "";
-        category.value = "";
-        description.value = "";
-        url.value = "";
-        img.value = "";
-        ReadFunction();
-    } else {
-        alert("Campos vacíos")
-    }
+        if (title.value != "" && description.value != "" && category.value != "") {
+            pelicula.push({
+                id: Math.round(Math.random() * 100000),
+                title: title.value,
+                category: category.value,
+                description: description.value,
+                publicado: false,
+                url: url.value,
+                img: img.value,
+                fav: false
+            })
+            localStorage.setItem('Peliculas', JSON.stringify(pelicula));
+            title.value = "";
+            category.value = "";
+            description.value = "";
+            url.value = "";
+            img.value = "";
+            ReadFunction();
+            ReadCarrusel();
+        } else {
+            alert("Campos vacíos")
+        }
+
 })
+}
 
 
 function ReadFunction() {
@@ -78,20 +62,20 @@ function ReadFunction() {
             <!--<td id="fav">${pelicula[index].fav}</td>-->
             <div>
             ${pelicula[index].publicado == true ?
-                `<td><input type="checkbox" checked onclick="updatePublicado(${pelicula[index].id})"></td>`
-                :
-                `<td><input type="checkbox" onclick="updatePublicado(${pelicula[index].id})"></td>`
-            }
+                    `<td><input type="checkbox" checked onclick="updatePublicado(${pelicula[index].id})"></td>`
+                    :
+                    `<td><input type="checkbox" onclick="updatePublicado(${pelicula[index].id})"></td>`
+                }
             </div>
             <td class="d-flex">
             <button class="btn deleteMovies" onclick="deleteMovies(${pelicula[index].id})"><i class="fa-solid fa-trash-can"></i></button>
             <button class="btn editMovies" onclick="viewMovie('${pelicula[index].id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
             <div>
             ${pelicula[index].fav == true ?
-                `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>`
-                :
-                `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa fa-star-o"></i></button>`
-            }
+                    `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa-solid fa-star"></i></button>`
+                    :
+                    `<button  class="btn favMovies" onclick="favMovies(${pelicula[index].id})"><i class="fa fa-star-o"></i></button>`
+                }
             </div>
             </td>
         </tr>      
@@ -108,7 +92,7 @@ function ReadFunction() {
 
 let identificador;
 
-function updatePublicado (id) {
+function updatePublicado(id) {
     identificador = id;
     let response = pelicula.map((mess) => {
         if (mess.id == id) {
@@ -142,9 +126,9 @@ function favMovies(id) {
             let update = {
                 ...mess,
                 fav: false
-            } 
-            return update;
             }
+            return update;
+        }
     })
     console.log(response)
     localStorage.setItem("Peliculas", JSON.stringify(response));
@@ -267,8 +251,8 @@ const updateMovie = () => {
     ReadFunction();
 }
 
-
 //Buscador
+
 const inputbuscar = document.querySelector('#search-movie');
 let btn = document.getElementById('btn');
 const filtrar = () => {
@@ -289,20 +273,20 @@ const filtrar = () => {
                                 <!--<td>${peli.url}</td>-->
                                 <div>
                                     ${peli.publicado == true ?
-                                        `<td><input type="checkbox" checked onclick="updatePublicado(${peli.id})"></td>`
-                                        :
-                                        `<td><input type="checkbox" onclick="updatePublicado(${peli.id})"></td>`
-                                    }
+                    `<td><input type="checkbox" checked onclick="updatePublicado(${peli.id})"></td>`
+                    :
+                    `<td><input type="checkbox" onclick="updatePublicado(${peli.id})"></td>`
+                }
                                 </div>
                                 <td class="d-flex">
                                     <button class="btn deleteMovies" onclick="deleteMovies(${peli.id})"><i class="fa-solid fa-trash-can"></i></ button>
                                     <button class="btn editMovies" onclick="viewMovie('${peli.id}')" data-bs-toggle="modal" data-bs-target="#updateModal"> <i class="fa-solid fa-pen-to-square"></i></button>
                                     <div>
                                     ${peli.fav == true ?
-                                        `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa-solid fa-star"></i></button>`
-                                        :
-                                        `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa fa-star-o"></i></button>`
-                                    }
+                    `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa-solid fa-star"></i></button>`
+                    :
+                    `<button  class="btn favMovies" onclick="favMovies(${peli.id})"><i class="fa fa-star-o"></i></button>`
+                }
                                     </div>
                                 </td>
                             </tr>`
@@ -324,9 +308,106 @@ const filtrar = () => {
     }
 }
 
+
 inputbuscar.addEventListener('keyup', filtrar)
 
 
+function ReadCarrusel() {
+
+    let arrayPeliculasaction = [];
+    let arrayPeliculasterror = [];
+    let arrayPeliculasinfantil = [];
+
+    let carruselaction = document.getElementById('carruselaction');
+    let carruselterror = document.getElementById('carruselterror');
+    let carruselinfantil = document.getElementById('carruselinfantil');
+
+    if (pelicula != null) {
+        for (let index = 0; index < pelicula.length; index++) {
+            //creo carrusel action
+            if (pelicula[index].category == "Acción") {
+                arrayPeliculasaction.push(`
+  
+      <div class="tarjeta">
+      <img src="${pelicula[index].img}" width="200em" height="200em" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
+  
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-body m-0 p-0 bg-dark">
+              <div class="modalimagen p-0"><img src="${pelicula[index].img}" class="mx-0" height="450em"></div>
+              <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+              <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+            </div>
+          
+          </div>
+        </div>
+      </div>                   
+                          `)
+                carruselaction.innerHTML = arrayPeliculasaction
+            }
+
+            //creo carrusel terror
+            if (pelicula[index].category == "Terror") {
+                arrayPeliculasterror.push(`
+  
+                  <div class="tarjeta">
+                  <img src="${pelicula[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
+              
+              
+                  <!-- Modal -->
+      <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-body m-0 p-0 bg-dark">
+              <div class="modalimagen p-0"><img src="${pelicula[index].img}" class="mx-0"></div>
+              <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+              <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+            </div>
+          
+          </div>
+        </div>
+      </div>   
+              
+                  `)
+                carruselterror.innerHTML = arrayPeliculasterror
+
+            }
+
+            //creo carrusel infantiles
+            if (pelicula[index].category == "Infantil") {
+                arrayPeliculasinfantil.push(`
+  
+                  <div class="tarjeta">
+                  <img src="${pelicula[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
+              
+              
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalinfantil${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark">
+                        <div class="modal-body m-0 p-0 bg-dark">
+                          <div class="modalimagen p-0"><img src="${pelicula[index].img}" class="mx-0"></div>
+                          <h3 class="m-2 text-light">${pelicula[index].title}</h3>
+                          <h6 class="m-2 text-light">${pelicula[index].description}</h6>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>   
+              
+                  `)
+                carruselinfantil.innerHTML = arrayPeliculasinfantil
+
+            }
+        }
+
+    }
+}
+
+ReadFunction();
+ReadCarrusel();
 
 
 

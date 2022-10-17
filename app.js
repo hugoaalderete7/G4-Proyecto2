@@ -1,3 +1,4 @@
+/*
 let navbar = document.getElementById('navbar')
 navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
 <div class="container-fluid">
@@ -20,16 +21,16 @@ navbar.innerHTML = `<nav class="navbar navbar-expand-lg bg-dark ">
             </li>
             <li class="nav-item" id="Admin">
                 
-            
+            </li>
         </ul>
     </div>
 </div>
 </nav>`
-
+*/
 // *footer*//
 /*
 let footerAdmin = document.getElementById('footerAdmin')
-footerAdmin.innerHTML = ` <footer id="footer-contacto" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
+footerAdmin.innerHTML = `<footer id="footer-contacto" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
 <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
     <a href="https://rollingcodeschool.com/" target="_blank"><img
             src="https://rollingcodeschool.com/wp-content/uploads/2021/07/Grupo-8.png" alt="rollingcode" /></a>
