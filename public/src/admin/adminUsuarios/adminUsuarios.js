@@ -55,9 +55,8 @@ const searchUsersView = document.getElementById('searchUsersView');
     }
 })*/
 
-
+// Buscador
 searchButtons.addEventListener('click', () => {
-
     let users = JSON.parse(localStorage.getItem("users"));
     if (searchs.value != "") {
         let response = users.filter((item) => item.name == searchs.value)
@@ -87,26 +86,25 @@ searchButtons.addEventListener('click', () => {
     }
 })
 
-function DeleteContact(i) {
 
+//Delete
+function DeleteContact(i) {
     const indice = users.findIndex ((item) => {
         return item.id == i 
     })
-    
     console.log(indice)
-
     users.splice(indice, 1);
     localStorage.setItem("users", JSON.stringify(users));
     ReadFunction();
+    location.reload()
 }
 
+//Editar
 let newidAdmin = document.getElementById("newnidAdmin")
 let newnameAdmin = document.getElementById("newnameAdmin");
 let newemailAdmin = document.getElementById("newemailAdmin");
 let newpasswordAdmin = document.getElementById("newpasswordAdmin");
 let newadminAdmin = document.getElementById("newadminAdmin");
-
-
 
 let identifiers;
 
@@ -150,6 +148,7 @@ function UpdateAdmin() {
 })*/
 localStorage.setItem("users", JSON.stringify(response));
 ReadFunction();
+location.reload()
 }
 
 main();

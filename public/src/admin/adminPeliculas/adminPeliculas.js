@@ -1,5 +1,4 @@
 let buttonSave = document.getElementById('buttonSave');
-let title = document.getElementById('title');
 let category = document.getElementById('categoria');
 let description = document.getElementById('descripcion');
 let url = document.getElementById('url');
@@ -14,12 +13,16 @@ let carruselterror = document.getElementById('carruselterror');
 let carruselinfantil = document.getElementById('carruselinfantil');
 
 
+function main() {
+    ReadFunction();
+    ReadCarrusel();
+}
+
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
 
-
 if (buttonSave != null) {
-buttonSave.addEventListener('click', () => {
+    buttonSave.addEventListener('click', () => {
         if (title.value != "" && description.value != "" && category.value != "") {
             pelicula.push({
                 id: Math.round(Math.random() * 100000),
@@ -43,7 +46,7 @@ buttonSave.addEventListener('click', () => {
             alert("Campos vacíos")
         }
 
-})
+    })
 }
 
 
@@ -88,10 +91,9 @@ function ReadFunction() {
     }
 }
 
+
 // Check Publicado
-
 let identificador;
-
 function updatePublicado(id) {
     identificador = id;
     let response = pelicula.map((mess) => {
@@ -108,12 +110,12 @@ function updatePublicado(id) {
     localStorage.setItem("Peliculas", JSON.stringify(response));
     console.log(pelicula)
     ReadFunction();
+    location.reload()
 }
 
-//------------------ favMovies () ------------------------------------
 
+// favMovies ()
 function favMovies(id) {
-
     identificador = id;
     let response = pelicula.map((mess) => {
         if (mess.id == id) {
@@ -133,6 +135,7 @@ function favMovies(id) {
     console.log(response)
     localStorage.setItem("Peliculas", JSON.stringify(response));
     ReadFunction();
+    location.reload()
     //Favorita();
 }
 
@@ -196,9 +199,10 @@ function Favorita() {
         }
 */
 /*------------------------------------------------------------------------------------------------------------------*/
+
+
 //Delete
 const deleteMovies = (id) => {
-
     let deleteMovie = []
     pelicula.map((item) => {
         if (id != item.id) {
@@ -218,6 +222,8 @@ let updateUrl = document.getElementById('updateUrl');
 let updateImg = document.getElementById('updateImg');
 
 let identifier;
+
+// viewMovie ()
 const viewMovie = (id) => {
     identifier = id;
     pelicula.map((item) => {
@@ -230,6 +236,8 @@ const viewMovie = (id) => {
         }
     })
 }
+
+// updateMovie ()
 const updateMovie = () => {
     let updateMovie = []
     pelicula.map((item) => {
@@ -252,9 +260,9 @@ const updateMovie = () => {
 }
 
 //Buscador
-
 const inputbuscar = document.querySelector('#search-movie');
 let btn = document.getElementById('btn');
+
 const filtrar = () => {
 
     let fila = document.getElementById("datatable-tbody");
@@ -308,12 +316,13 @@ const filtrar = () => {
     }
 }
 
+if (inputbuscar != null) {
+    inputbuscar.addEventListener('keyup', filtrar)
+}
 
-inputbuscar.addEventListener('keyup', filtrar)
 
-
+// ReadCarrusel ()
 function ReadCarrusel() {
-
     let arrayPeliculasaction = [];
     let arrayPeliculasterror = [];
     let arrayPeliculasinfantil = [];
@@ -406,8 +415,7 @@ function ReadCarrusel() {
     }
 }
 
-ReadFunction();
-ReadCarrusel();
+main();
 
 
 
