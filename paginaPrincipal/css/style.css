@@ -71,8 +71,8 @@ body{
     position: relative;
     align-self: center;
     height: 240px;
-  overflow-y: auto;
-  scrollbar-width: 10px;
+    overflow-y: auto;
+    scrollbar-width: 10px;
 }
 /*
 ::-webkit-scrollbar {

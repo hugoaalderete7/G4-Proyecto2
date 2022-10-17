@@ -18,7 +18,10 @@ function ReadFunction() {
             <td>${getlocalStorage[i].email}</td>
             <td>${getlocalStorage[i].password}</td>
             <td>${getlocalStorage[i].admin}</td>
-            <td> <div class="d-flex"><button class="nav-link text-dark m-3 w-25 h-50" role="" onclick="DeleteContact('${i}')">X</button> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="ViewInput('${getlocalStorage[i].id}')">
+            <td> <div class="d-flex">
+            <button class="nav-link text-dark m-3 w-25 h-50" role="" onclick="DeleteContact('${i}')">
+            X</button>
+             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="ViewInput('${getlocalStorage[i].id}')">
             A
           </button> </div> </td>
           </tr>
@@ -148,6 +151,7 @@ function UpdateAdmin() {
         password: newpasswordAdmin.value,
         admin: newadminAdmin.value
 })*/
+
 localStorage.setItem("users", JSON.stringify(response));
 ReadFunction();
 }

@@ -35,11 +35,12 @@
         <nav id="navbar">
 
         </nav>
+        
         <!-- enlace para abrir modal login desde admin  -->
         <section id="loginModal">
 
         </section>
-        <!-------------------------------------- Navbar ------------------------------------------------------------------>
+        <!-------------------------------------- Fin Navbar ------------------------------------------------------------------>
     </header>
     <main>
         <div id="container" class="container">
@@ -59,24 +60,26 @@
 
                     </div>
                 </div>
-                <table class="datatable">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Titulo</th>
-                            <th>Categoria</th>
-                            <th>Descripcion</th>
-                            <th>Publicado</th>
-                            <th>Acciones</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="datatable-tbody">
-
-                        <!-- aqui ira todo lo q carguemos -->
-
-                    </tbody>
-                </table>
+                <div class="table-responsive-md-xs">
+                    <table class="datatable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titulo</th>
+                                <th>Categoria</th>
+                                <th>Descripcion</th>
+                                <th>Publicado</th>
+                                <th>Acciones</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="datatable-tbody">
+                            
+                            <!-- aqui ira todo lo q carguemos -->
+                            
+                        </tbody>
+                    </table>
+                </div>
                 <div class="footer-tools">
                     <div class="list-items">
                         Mostrar
@@ -97,11 +100,10 @@
                             <li><button>10</button></li>
                         </ul>
                         <div class="pagination-responsive">
-                            <ul>
-                                <li><button>Anterior</button></li>
-                                <li><span>1</span></li>
-                                <li><button>Siguiente</button></li>
-                            </ul>
+                                <button class="btn btn-outline-danger me-3 " type="button"> Anterior </button>
+                                <span>1</span>
+                                <button class="btn btn-outline-danger">  Siguiente</button>
+                           
                         </div>
                     </div>
                 </div>
@@ -207,7 +209,6 @@
                                 <option value="Acción">Acción</option>
                                 <option value="Terror">Terror</option>
                                 <option value="Infantil">Animación</option>
-
                             </select>
                         </div>
                         <div class="mb-3">
@@ -221,8 +222,6 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Imagen de la pelicula:</label>
-
-
                             <input type="text" id="updateImg">
                             <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
 
@@ -230,35 +229,16 @@
                     </form>
                 </div>
                 <div class="modal-footer" data-bs-dismiss="modal">
-                    <button type="submit" onclick="updateMovie()" class="btn btn-dark w-100">Guardar cambios</button>
+                    <button type="submit" onclick="updateMovie()" class="btn btn-dark">Guardar cambios</button>
                     <button type="button" id="cancelar-modal" class="modal-footer-btn">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
     
-    <footer id="footer" class="footer_movies conteiner m-0 align-items-center text-center py-2 row">
-        <aside class="publicidad_footer order-2 order-md-1 col-xl-4 col-12 mx-0 my-2">
-            <a href="https://rollingcodeschool.com/" target="_blank"><img
-                    src="https://rollingcodeschool.com/wp-content/uploads/2021/07/Grupo-8.png" alt="rollingcode" /></a>
-        </aside>
-        <div class="footer_derechos order-1 order-md-2 col-xl-4 col-12 mx-0 py-4">
-            <p>Todos los derechos reservados</p>
-            <p>Rolling Movies ©</p>
-        </div>
-        <div class="footer_redes order-2 order-md-3 col-xl-4 col-12 mx-md-0 my-4">
-            <a class="mx-auto" href="error.html"><i
-                    class="fa-brands fa-instagram icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="error.html"><i
-                    class="fa-brands fa-facebook icon-footer icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="error.html"><i
-                    class="fa-brands fa-whatsapp icon d-flex align-items-center justify-content-center p-4"></i></a>
-            <a class="mx-auto" href="error.html"><i
-                    class="fa-brands fa-twitter icon d-flex align-items-center p-4 justify-content-center"></i></a>
-        </div>
-    </footer>
+    
     <!----------------------------------------------------------------- footer----------------------------------------------------------------->
-    <section id="footerAdmin"></section>
+  <section id="footerAdmin"></section>
     <!-- --------------------------------------------------- modal login  --------------------------------------------------->
     <section id="loginModal"></section>
 
@@ -267,8 +247,11 @@
     <script src="/public/src/admin/adminPeliculas/carrusel.js"></script>
     <script src="/paginaPrincipal/app.js"></script>
     <script src="/public/src/admin/login/login.js"></script>
+    <script src="/public/src/error/error.js"></script>
     
-
+<!--Link para usar el icono de Font Awesome-->
+<script src="https://kit.fontawesome.com/574da1cd36.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

@@ -27,11 +27,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-   
 }
 main{
-    height: auto;
-    
+   
+    height: 100%;
 }
 .container {
     display: flex;
@@ -47,8 +46,7 @@ main{
     justify-content: space-between;
     margin-bottom: 37px;
     width: 80%;
-    color:  #801f1f;
-    
+    color:  #fdfdfd;
 }
 
 #space {
@@ -298,6 +296,39 @@ main{
         margin-top: 100px;
         padding: 1.5rem 1.5rem;
      }
+     .datatable-container{
+        width: auto;
+    }
+
+
+}
+@media (max-width: 990px) { 
+    .container {
+        width: 100%;
+    }
+    .datatable-container{
+        width: auto;
+    }
+
+    #datatable-title {
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+
+    .header-datatable {
+        font-size: 25px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-new-movie {
+        align-self: flex-end;
+    }
+
+    .modal_container {
+        margin-top: 100px;
+        padding: 1.5rem 1.5rem;
+     }
 
 }
 
@@ -305,33 +336,28 @@ main{
     
     .container {
         padding-top: 50px;
-        width: 80%;
+        width: 100%;
     }
 
     .header-datatable {
         justify-content: center;
         width: 100%;
     }
-    
     #space {
         display: none;
     }
 
-    .datatable-container {
-        width: 100%;
-    }
-
+    /* .datatable-container {
+        width: auto;
+    } */
     .header-tools {
         justify-content: center!important;
     }
-
-
-
 /* preguntar  */
-    tr{
+    /* tr{
         display: flex;
         flex-direction: column;
-    }
+    } */
 
 
     /* preguntar  */
@@ -362,10 +388,81 @@ main{
         padding: 5px 12.5px;
         margin-left: 15px;
     }
+    .datatable-container{
+        width: auto;
+    }
+   
+}
+@media (max-width: 660px) {
     
+    .container {
+        padding-top: 50px;
+        width: 100%;
+    }
+
+    .header-datatable {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #space {
+        display: none;
+    }
+
+    .datatable {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header-tools {
+        justify-content: center!important;
+    }
+/* preguntar  */
+    /* tr{
+        display: flex;
+        flex-direction: column;
+    } */
+
+
+    /* preguntar  */
+    /* .datatable-tbody{
+        display: flex;
+        flex-direction: column;
+    } */
+
+
+    
+     /* esto estaba  */
+    /* thead, td {
+        display: none;
+    } */
+
+    
+/* modal editar  */
+    .modal_container {
+        padding: 2em 1.5em;
+    }
+
+    .modal_title {
+        font-size: 1rem;
+    }
+    
+    .modal_footer {
+        padding-top: 50px;
+    }
+    .modal_footer_button {
+        padding: 5px 12.5px;
+        margin-left: 15px;
+    }
+   .datatable-container{
+    width: auto;
+   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
+    .container{
+        width: 100%;
+    }
     .button-new-movie {
         align-self:center;
     }
@@ -384,7 +481,65 @@ main{
     }
     .pagination-responsive{
         display: flex!important;
-        justify-content: center;
+       justify-content: center;
     }
+    .pagination-responsive button{
+        font-size: 15px;
+        height: 40px;
+        width: 90px;
+    }
+    .datatable{
+        display: block;
+        overflow-x: auto
+    }
+    .datatable-container{
+        width: 500px;
+    }
+    /* .datatable {
+        display: block;
+        flex-wrap: wrap;
+    } */
+   
+}
+@media (max-width: 500px) {
+    .container{
+        width: 100%;
+    }
+    .button-new-movie {
+        align-self:center;
+    }
+
+    .list-items {
+        display: none;
+    }
+    #datatable-title {
+        font-size: 22.5px;
+    }
+    .pages {
+        width: 100%!important;
+    }
+    .pagination {
+        display: none!important;
+    }
+    .pagination-responsive{
+        display: flex!important;
+       justify-content: center;
+    }
+    .pagination-responsive button{
+        font-size: 15px;
+        height: 40px;
+        width: 90px;
+    }
+    .datatable{
+        display: block;
+        overflow-x: auto
+    }
+    .datatable-container{
+        width: 100%;
+    }
+    /* .datatable {
+        display: block;
+        flex-wrap: wrap;
+    } */
    
 }

@@ -289,7 +289,7 @@ const filtrar = () => {
                                 <!--<td>${peli.url}</td>-->
                                 <div>
                                     ${peli.publicado == true ?
-                                        `<td><input type="checkbox" checked onclick="updatePublicado(${peli.id})"></td>`
+                                        `<td><input  type="checkbox" checked onclick="updatePublicado(${peli.id})"></td>`
                                         :
                                         `<td><input type="checkbox" onclick="updatePublicado(${peli.id})"></td>`
                                     }
