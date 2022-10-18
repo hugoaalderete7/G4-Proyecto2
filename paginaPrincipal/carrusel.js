@@ -81,8 +81,6 @@ function ReadCarrusel() {
   
                   <div class="tarjeta">
                   <img src="${pelicula[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
-              
-              
                   <!-- Modal -->
       <div class="modal fade" id="exampleModalterror${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -92,11 +90,9 @@ function ReadCarrusel() {
               <h3 class="m-2 text-light">${pelicula[index].title}</h3>
               <h6 class="m-2 text-light">${pelicula[index].description}</h6>
             </div>
-          
           </div>
         </div>
-      </div>   
-              
+      </div>
                   `)
           carruselterror.innerHTML = arrayPeliculasterror
   
