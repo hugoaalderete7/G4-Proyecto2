@@ -1,6 +1,4 @@
 :root {
-    
-   
     --highlight-color: #3282b8;
     --dt-padding-s: 6px;
     --dt-padding-xs: 2px;
@@ -17,24 +15,24 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/*
+header{
+    position: fixed;
+    height: 20vh;
+}
+*/
 body {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(56, 51, 51, 0.275) 100%);
-    background-image: url("https://wallpapercave.com/wp/wp2878133.jpg");
+    background-image: url(/public/images/fondoNegro.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    padding-top: 5%;
-}
-header{
-    height: 10vh;
+   
 }
 main{
     height: auto;
     
 }
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -49,6 +47,8 @@ main{
     justify-content: space-between;
     margin-bottom: 37px;
     width: 80%;
+    color:  #801f1f;
+    
 }
 
 #space {
@@ -58,26 +58,23 @@ main{
 .button-new-movie {
     width: 150px;
     height: 50px;
-    background: #352d2e;
+    background: #060606;
     border-radius: 20px;
     font-size: 20px;
-    border-color: #000000;
+    border-color: #801f1f;
     color: white;
     cursor: pointer;
 }
 
-h1{
-    color: white;
-   
-}
-
 .datatable-container {
     background-color: rgba(255, 255, 255, 0.7) ;
-    border-radius: 3px;
+    border-radius: 10px;
+    border: solid  #801f1f;;
     width: 80%;
     font-size: 18px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    padding: 10px;
 }
 
 .datatable-container .header-tools {
@@ -99,7 +96,7 @@ h1{
     display: inline-block;
     box-sizing: border-box;
     border-radius: 3px;
-    border: solid 1px rgb(0, 0, 0);
+    border: solid 1px #801f1f;;
     text-align: center;
    
 }
@@ -328,9 +325,27 @@ h1{
         justify-content: center!important;
     }
 
-    thead, td {
-        display: none;
+
+
+/* preguntar  */
+    tr{
+        display: flex;
+        flex-direction: column;
     }
+
+
+    /* preguntar  */
+    /* .datatable-tbody{
+        display: flex;
+        flex-direction: column;
+    } */
+
+
+    
+     /* esto estaba  */
+    /* thead, td {
+        display: none;
+    } */
 
     .modal_container {
         padding: 2em 1.5em;
@@ -367,10 +382,9 @@ h1{
     .pagination {
         display: none!important;
     }
-    .pagination-responsive {
+    .pagination-responsive{
         display: flex!important;
         justify-content: center;
     }
-
+   
 }
-
