@@ -14,9 +14,8 @@ let carruselinfantil = document.getElementById('carruselinfantil');
 
 
 function main() {
-    ReadFunction();
-    ReadCarrusel();
 }
+
 
 let pelicula = JSON.parse(localStorage.getItem('Peliculas')) || [];
 
@@ -326,13 +325,15 @@ function ReadCarrusel() {
     let arrayPeliculasaction = [];
     let arrayPeliculasterror = [];
     let arrayPeliculasinfantil = [];
-
+    
     let carruselaction = document.getElementById('carruselaction');
     let carruselterror = document.getElementById('carruselterror');
     let carruselinfantil = document.getElementById('carruselinfantil');
+    
 
     if (pelicula != null) {
         for (let index = 0; index < pelicula.length; index++) {
+
             //creo carrusel action
             if (pelicula[index].category == "Acción") {
                 arrayPeliculasaction.push(`
@@ -355,7 +356,7 @@ function ReadCarrusel() {
       </div>                   
                           `)
                 carruselaction.innerHTML = arrayPeliculasaction
-            }
+            } else 
 
             //creo carrusel terror
             if (pelicula[index].category == "Terror") {
@@ -382,7 +383,7 @@ function ReadCarrusel() {
                   `)
                 carruselterror.innerHTML = arrayPeliculasterror
 
-            }
+            } else
 
             //creo carrusel infantiles
             if (pelicula[index].category == "Infantil") {
@@ -411,12 +412,11 @@ function ReadCarrusel() {
 
             }
         }
-
     }
 }
 
-main();
-
-
+//main();
+ReadFunction();
+ReadCarrusel()
 
 
