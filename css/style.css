@@ -73,7 +73,15 @@ body{
     height: 240px;
   overflow-y: auto;
   scrollbar-width: 10px;
+  background-color: rgba(0, 0, 0, 0.459);
 }
+
+.carruselcategory {
+  background-color: rgba(0, 0, 0, 0.459);
+  font-size: 25px;
+  font-weight: 200;
+}
+
 
 ::-webkit-scrollbar {
   display: none;
@@ -86,6 +94,10 @@ body{
   display: flex;
   justify-content: center;
 }
+
+.tarjeta img:hover{
+  transform:scale(1.1);
+  }
 
 .tarjeta img {
   object-fit: cover;

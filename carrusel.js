@@ -19,7 +19,7 @@ function ReadCarrusel() {
               arrayPeliculasaction.push(`
 
     <div class="tarjeta">
-    <img src="${list[index].img}" width="200em" height="200em" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
+    <img src="${list[index].img}" width="230em" height="230em" type="button" class="btn" data-bs-target="#exampleModalaction${index}" data-bs-toggle="modal">
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalaction${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -43,7 +43,7 @@ function ReadCarrusel() {
               arrayPeliculasterror.push(`
 
                 <div class="tarjeta">
-                <img src="${list[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
+                <img src="${list[index].img}" width="230em" height="230em" type="button" class="btn" data-bs-target="#exampleModalterror${index}" data-bs-toggle="modal">
             
             
                 <!-- Modal -->
@@ -70,7 +70,7 @@ function ReadCarrusel() {
               arrayPeliculasinfantil.push(`
 
                 <div class="tarjeta">
-                <img src="${list[index].img}" width="400px" height="250px" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
+                <img src="${list[index].img}" width="230em" height="230em" type="button" class="btn" data-bs-target="#exampleModalinfantil${index}" data-bs-toggle="modal">
             
             
                 <!-- Modal -->
